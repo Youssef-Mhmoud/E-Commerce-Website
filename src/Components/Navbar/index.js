@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <header>
       <div className="container nav-bar">
-        <Link to='/' className="logo">Youssef</Link>
+        <Link to='/' className="logo">Shopping</Link>
         <div className="form">
           <form method="get">
             <input type='text' placeholder="Category, Shoos, Cloths ..." />

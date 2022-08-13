@@ -4,7 +4,7 @@ import './index.scss'
 const Home = () => {
   return (
     <div>
-      cc
+      Hello Home
     </div>
   )
 }
