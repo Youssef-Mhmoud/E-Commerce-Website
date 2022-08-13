@@ -1,13 +1,19 @@
 import "./App.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./Components/Layout";
+import Home from "./Components/Home";
+import Cart from "./Components/Cart";
 
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 function App() {
   return (
-    <div className="App">
-      hello wrold
-
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home/>} />
+          <Route path="/cart" element={<Cart/>} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
