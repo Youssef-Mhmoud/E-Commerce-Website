@@ -1,55 +1,63 @@
-.slider {
-  width: 750px;
-  height: 500px;
-  position: relative;
+.landing {
   display: flex;
-  overflow: hidden;
-  margin: auto;
-  margin-top: 10px;
-
-  .img {
-    width: 99%;
-    height: 99%;
-    opacity: 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: 1.2s;
-    // Center Slide
-    &.active {
-      opacity: 1;
-      transform: translateX(auto);
-    }
-    // Right Slide
-    &.right {
-      transform: translate(-150%, -50%);
-    }
-    // Left Slide
-    &.left {
-      transform: translate(150%, -50%);
-    }
-
-    img {
-      border-radius: 5px;
-      height: 100%;
+  .slider {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.52);
+    border-radius: 5px;
+    width: 750px;
+    height: 500px;
+    .img {
       width: 100%;
-    }
-  }
+      height: 100%;
+      opacity: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: 1s;
+      // Center Slide
+      &.active {
+        opacity: 1;
+        transform: translateX(auto);
+      }
+      // Right Slide
+      &.right {
+        // transform: translate(-150%, -50%);
+      }
+      // Left Slide
+      &.left {
+        // transform: translate(150%, -50%);
+      }
 
-  .angelLeft,
-  .angelRight {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #e95317e9;
-    font-size: 30px;
-    cursor: pointer;
-  }
-  .angelLeft {
-    left: 15%;
-  }
-  .angelRight {
-    right: 15%;
+      img {
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .angelLeft,
+    .angelRight {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #e95317e9;
+      font-size: 30px;
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.1);
+      height: 100%;
+      width: 20px;
+      padding: 0 15px;
+    }
+    .angelLeft {
+      left: 0%;
+    }
+    .angelRight {
+      right: 0%;
+    }
   }
 }
