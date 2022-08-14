@@ -1,0 +1,55 @@
+.slider {
+  width: 750px;
+  height: 500px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 10px;
+
+  .img {
+    width: 99%;
+    height: 99%;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1.2s;
+    // Center Slide
+    &.active {
+      opacity: 1;
+      transform: translateX(auto);
+    }
+    // Right Slide
+    &.right {
+      transform: translate(-150%, -50%);
+    }
+    // Left Slide
+    &.left {
+      transform: translate(150%, -50%);
+    }
+
+    img {
+      border-radius: 5px;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .angelLeft,
+  .angelRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #e95317e9;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .angelLeft {
+    left: 15%;
+  }
+  .angelRight {
+    right: 15%;
+  }
+}

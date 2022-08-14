@@ -1,6 +1,6 @@
 header {
-  // border-bottom: 1px solid #000;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+
   .nav-bar {
     padding: 15px;
     display: flex;
@@ -12,6 +12,7 @@ header {
       font-weight: bold;
       text-decoration: none;
       color: black;
+      text-transform: uppercase;
     }
 
     .form {
@@ -23,9 +24,10 @@ header {
           width: 100%;
           border-radius: 4px 0 0 4px;
           color: black;
-          // font-size: 17px;
           outline: none;
+          text-transform: capitalize;
           padding: 8px 6px;
+          font-weight: 600;
           border: 1px solid #e9531791;
           border-right: none;
           &:focus {
@@ -39,7 +41,9 @@ header {
           border-left: none;
           border-radius: 0px 4px 4px 0px;
           color: white;
+          padding: 0 15px;
           cursor: pointer;
+          font-size: 17px;
         }
       }
     }
@@ -50,15 +54,52 @@ header {
 
       .user {
         display: block;
-        color: black;
+        color: white;
         text-decoration: none;
         margin-right: 15px;
-        font-size: 22px;
+        position: relative;
+
+        &:hover .say-hello {
+          display: block;
+        }
+        .user-icon {
+          color: #e95317;
+          font-size: 22px;
+        }
+
+        .say-hello {
+          display: none;
+          position: absolute;
+          background-color: #e95317e9;
+          // box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.544);
+          padding: 20px;
+          left: 50%;
+          top: 43px;
+          transform: translateX(-50%);
+          width: 120px;
+          font-size: 18px;
+          // z-index: 3;
+          border-radius: 5px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            transform: translateX(-50%);
+            left: 50%;
+            top: -58%;
+            border-color: transparent transparent #e95317e9 transparent;
+            border-width: 20px;
+            border-style: solid;
+          }
+          span {
+            font-weight: 600;
+          }
+        }
       }
 
       .cart {
         display: block;
-        color: black;
+        color: #e95317f5;
         text-decoration: none;
         font-size: 22px;
       }
