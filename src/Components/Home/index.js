@@ -3,7 +3,7 @@ import SliderData from "../../Data/SliderData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./index.scss";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { faApple, faAws, faBehance, faFacebook, faGoogle, faMicrosoft, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faApple, faAws, faBehance, faGoogle, faMicrosoft } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import Products from "../Products";
 

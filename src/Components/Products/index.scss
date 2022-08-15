@@ -1,0 +1,88 @@
+.products-pg {
+  margin-top: 100px;
+  h2 {
+    width: fit-content;
+    margin: 60px auto;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    color: #ed4e0f;
+    position: relative;
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ed4e0f;
+      width: 100%;
+      height: 3px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 53.4px;
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      background-color: white;
+      border: 3px solid #ed4e0f;
+      width: 10px;
+      height: 10px;
+    }
+  }
+  .main-watches {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .watch-box {
+    width: 270px;
+    margin: 20px 0;
+    box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+      height: 220px;
+    }
+
+    .info-watch {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+
+      .title-watch {
+        font-size: 20px;
+      }
+
+      .price {
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+
+    .cart-btn {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      border: 2px solid #ed4e0f;
+      background-color: transparent;
+      padding: 6px 8px;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: .5s;
+      &:hover {
+        background-color: #ed4e0f;
+        color: white;
+      }
+    }
+  }
+}

@@ -70,7 +70,7 @@ header {
         .say-hello {
           display: none;
           position: absolute;
-          background-color: #e95317e9;
+          background-color: #e95317;
           // box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.544);
           padding: 20px;
           left: 50%;
@@ -78,7 +78,7 @@ header {
           transform: translateX(-50%);
           width: 120px;
           font-size: 18px;
-          // z-index: 3;
+          z-index: 1;
           border-radius: 5px;
 
           &::after {
@@ -87,7 +87,7 @@ header {
             transform: translateX(-50%);
             left: 50%;
             top: -58%;
-            border-color: transparent transparent #e95317e9 transparent;
+            border-color: transparent transparent #e95317 transparent;
             border-width: 20px;
             border-style: solid;
           }
