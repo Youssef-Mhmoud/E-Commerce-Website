@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import SliderData from "../../Data/SliderData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./index.scss";
-import sale from "../../assests/imgs/sale.jpg";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faApple, faAws, faBehance, faFacebook, faGoogle, faMicrosoft, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import Products from "../Products";
 
 const Home = () => {
   // Start Slider UseState
@@ -99,8 +100,30 @@ const Home = () => {
               icon={faAngleRight}
             />
           </div>
-          <div className=""></div>
         </div>
+          <div className="line-ads">
+            <div className="box">
+              <FontAwesomeIcon icon={faApple} className="brand"/>
+              <h4>Apple</h4>
+            </div>
+            <div className="box">
+              <FontAwesomeIcon icon={faMicrosoft} className="brand"/>
+              <h4>Microsoft</h4>
+            </div>
+            <div className="box">
+              <FontAwesomeIcon icon={faGoogle} className="brand"/>
+              <h4>Google</h4>
+            </div>
+            <div className="box">
+              <FontAwesomeIcon icon={faAws} className="brand"/>
+              <h4>Aws</h4>
+            </div>
+            <div className="box">
+              <FontAwesomeIcon icon={faBehance} className="brand"/>
+              <h4>Behance</h4>
+            </div>
+          </div>
+          <Products />
       </div>
     </>
   );
