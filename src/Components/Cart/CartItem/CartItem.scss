@@ -1,8 +1,51 @@
 .container {
   .cart-box {
-    width: 250px;
+    border-radius: 6px;
+    background-color: rgba(201, 200, 200, 0.264);
+    padding-right: 40px;
+    display: flex;
+    width: 96%;
+    height: 200px;
+    margin: 40px 0;
+    box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.2);
+
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
     img {
-      width: 100%;
+
+      height: 100%;
+      width: 250px;
+      border-radius: 5px 0 0 5px;
+    }
+    .info-cart {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+    .inc-dec {
+      .inc,.dec {
+        margin: 0 10px;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .number {
+        border: 2px solid;
+        padding: 0 5px;
+
+        font-size: 20px;
+        border-radius: 5px;
+      }
+    }
+    .remove-item {
+      width: fit-content;
+      background-color: black;
+      color: white;
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
     }
   }
 }
