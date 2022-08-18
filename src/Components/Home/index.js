@@ -7,11 +7,13 @@ import { faApple, faAws, faBehance, faGoogle, faMicrosoft } from "@fortawesome/f
 import { Link } from "react-router-dom";
 import Products from "../Products";
 
+
 const Home = () => {
   // Start Slider UseState
   const [data, setData] = useState(SliderData);
   const [index, setIndex] = useState(0);
   // End Slider UseState
+
 
   // Slider
   {
