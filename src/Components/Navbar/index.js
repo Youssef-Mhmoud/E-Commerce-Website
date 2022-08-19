@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,9 +6,15 @@ import {
   faCircleUser,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const dispatch = useDispatch()
+  const cart = useSelector((state) => state.cart);
+
+
+
   return (
     <header>
       <div className="container nav-bar">
@@ -30,6 +36,7 @@ const Navbar = () => {
           </Link>
           <Link className="cart" to="/cart">
             <FontAwesomeIcon icon={faCartShopping} />
+            <span className="count-cart">{cart.length}</span>
           </Link>
         </div>
       </div>

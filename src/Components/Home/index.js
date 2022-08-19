@@ -14,7 +14,6 @@ const Home = () => {
   const [index, setIndex] = useState(0);
   // End Slider UseState
 
-
   // Slider
   {
     useEffect(() => {

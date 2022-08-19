@@ -17,7 +17,7 @@ const Products = () => {
   const airpods = useSelector((state) => state.airpods.list);
   const watch = useSelector((state) => state.watch.list);
   const products = useSelector((state) => state.products.list);
-console.log(watch)
+
   useEffect(() => {
     dispatch(fetchAsyncAirpods());
   }, []);

@@ -9,6 +9,7 @@ const cartSlice = createSlice({
     addToCart: (state, { payload }) => {
       const { id } = payload;
       const itemExists = state.find((item) => item.id === id);
+
       if (itemExists) {
         return state.map((item) => {
           if (item.id === id) {
@@ -18,8 +19,27 @@ const cartSlice = createSlice({
         });
       } else {
         state.push({
-          ...payload, quantity: 1
-        })
+          ...payload,
+          quantity: 1,
+        });
+      }
+    },
+    remove: (state, { payload }) => {
+      const { id } = payload;
+      const itemExists = state.find((item) => item.id === id);
+
+      if (itemExists) {
+        return state.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + 1 };
+          }
+          return item;
+        });
+      } else {
+        state.pop({
+          ...payload,
+          quantity: 1,
+        });
       }
     },
     clear: (state) => {
@@ -28,9 +48,7 @@ const cartSlice = createSlice({
   },
 });
 
-export const { clear, addToCart } = cartSlice.actions;
-
-
+export const { clear, addToCart, remove } = cartSlice.actions;
 
 const cartReducer = cartSlice.reducer;
 
