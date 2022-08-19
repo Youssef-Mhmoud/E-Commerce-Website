@@ -2,11 +2,21 @@ import React, { useEffect, useState } from "react";
 import SliderData from "../../Data/SliderData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./index.scss";
-import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { faApple, faAws, faBehance, faGoogle, faMicrosoft } from "@fortawesome/free-brands-svg-icons";
+import {
+  faAngleRight,
+  faAngleLeft,
+  faAngleUp,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faApple,
+  faAws,
+  faBehance,
+  faGoogle,
+  faMicrosoft,
+} from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import Products from "../Products";
-
+import { useRef } from "react";
 
 const Home = () => {
   // Start Slider UseState
@@ -41,9 +51,29 @@ const Home = () => {
   const handleLeft = () => {
     setIndex((prevIndex) => prevIndex - 1);
   };
+  const scrollToTop = useRef(null)
 
+  useEffect(() => {
+    window.addEventListener("scroll", (eo) => {
+      if (window.scrollY >= 500) {
+        scrollToTop.current.classList.add("show");
+      } else {
+        scrollToTop.current.classList.remove("show");
+      }
+    });
+  }, []);
+
+  const scroll = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
   return (
     <>
+      <div className="scroll" ref={scrollToTop} onClick={scroll}>
+        <FontAwesomeIcon icon={faAngleUp} />
+      </div>
       <div className="container home-pg">
         <div className="landing">
           <div className="main-side">
@@ -67,9 +97,9 @@ const Home = () => {
                 Vestibulum molestie vulputate mollis. Ut maximus tortor eros, ut
                 interdum nulla semper vel. Nulla facilisi. Pellentesque habitant
               </p>
-                <Link to='/' className="about-btn">
-                  More Details
-                </Link>
+              <Link to="/" className="about-btn">
+                More Details
+              </Link>
             </aside>
           </div>
           <div className="slider">
@@ -102,29 +132,29 @@ const Home = () => {
             />
           </div>
         </div>
-          <div className="line-ads">
-            <div className="box">
-              <FontAwesomeIcon icon={faApple} className="brand"/>
-              <h4>Apple</h4>
-            </div>
-            <div className="box">
-              <FontAwesomeIcon icon={faMicrosoft} className="brand"/>
-              <h4>Microsoft</h4>
-            </div>
-            <div className="box">
-              <FontAwesomeIcon icon={faGoogle} className="brand"/>
-              <h4>Google</h4>
-            </div>
-            <div className="box">
-              <FontAwesomeIcon icon={faAws} className="brand"/>
-              <h4>Aws</h4>
-            </div>
-            <div className="box">
-              <FontAwesomeIcon icon={faBehance} className="brand"/>
-              <h4>Behance</h4>
-            </div>
+        <div className="line-ads">
+          <div className="box">
+            <FontAwesomeIcon icon={faApple} className="brand" />
+            <h4>Apple</h4>
           </div>
-          <Products />
+          <div className="box">
+            <FontAwesomeIcon icon={faMicrosoft} className="brand" />
+            <h4>Microsoft</h4>
+          </div>
+          <div className="box">
+            <FontAwesomeIcon icon={faGoogle} className="brand" />
+            <h4>Google</h4>
+          </div>
+          <div className="box">
+            <FontAwesomeIcon icon={faAws} className="brand" />
+            <h4>Aws</h4>
+          </div>
+          <div className="box">
+            <FontAwesomeIcon icon={faBehance} className="brand" />
+            <h4>Behance</h4>
+          </div>
+        </div>
+        <Products />
       </div>
     </>
   );
