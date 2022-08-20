@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import {toast} from 'react-toastify'
 const initialState = {
-  cartItem: []
+  cartItem: localStorage.getItem("cartItem") ? JSON.parse(localStorage.getItem("cartItem")) : [],
+  cartTotalQuantity: 0,
+  cartTotalAmount: 0,
 };
 
 const cartSlice = createSlice({
@@ -9,42 +11,26 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, { payload }) => {
-      const { id } = payload;
-      const itemExists = state.cartItem.find((item) => item.id === id);
-      if (itemExists) {
-        return state.cartItem.map((item) => {
-          if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1 };
-          }
-          return item;
-        });
-      } else {
-        state.cartItem.push({
-          ...payload,
-          quantity: 1,
-        });
-      }
-      console.log(initialState)
+      const itemIndex = state.cartItem.findIndex(
+        (item) => item.id === payload.id
+      );
 
-      // LocalStorage
+      if (itemIndex >= 0) {
+        state.cartItem[itemIndex].cartQuantity += 1;
+        toast.info(`Increased ${state.cartItem[itemIndex].title} Quantity`, {
+          position: "bottom-left"
+        })
+      } else {
+        const tempProduct = { ...payload, cartQuantity: 1 };
+        state.cartItem.push(tempProduct);
+        toast.success(`${payload.title} Added To Cart`, {
+          position: "bottom-left"
+        })
+      }
       localStorage.setItem("cartItem", JSON.stringify(state.cartItem))
     },
     remove: (state, { payload }) => {
-      const { id } = payload;
-      const itemExists = state.cartItem.filter((item) => item.id !== id);
-      if (itemExists) {
-        return state.map((item) => {
-          if (item.id !== id) {
-            return { ...item, quantity: item.quantity - 1 };
-          }
-          return item;
-        });
-      } else {
-        state.push({
-          ...payload,
-          quantity: 1,
-        });
-      }
+      state.cartItem.pop(payload);
     },
     clear: (state) => {
       return [];
