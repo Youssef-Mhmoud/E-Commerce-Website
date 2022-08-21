@@ -1,6 +1,6 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { remove } from "../../../redux/Slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { remove,inc ,dec } from "../../../redux/Slices/cartSlice";
 import "./CartItem.scss";
 
 const CartItem = ({ product }) => {
@@ -23,9 +23,9 @@ const CartItem = ({ product }) => {
         </div>
         <div className="price">${product.price}</div>
         <div className="product-quantity">
-          <span className="inc">+</span>
+          <span className="inc" onClick={() => dispatch(inc(product))}>+</span>
           <span className="number">{product.cartQuantity}</span>
-          <span className="dec">-</span>
+          <span className="dec" onClick={() => dispatch(dec(product))}>-</span>
         </div>
         <div className="product-total">
           ${product.price * product.cartQuantity}
