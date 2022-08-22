@@ -1,51 +1,30 @@
 import React, { useEffect, useState } from "react";
 import "./index.scss";
-import AirPod from "../Products/AirPod";
+import Product from "./Product";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAsyncProducts } from "../../redux/Slices/productsSlice";
+import {
+  fetchAsyncProducts,
+  filterItems,
+} from "../../redux/Slices/productsSlice";
 
 const Products = () => {
   // Redux
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.list);
-
   useEffect(() => {
     dispatch(fetchAsyncProducts());
   }, []);
+// console.log(products.length)
+
 
   return (
     <div className="container products-pg">
-      {/* <h2>Watches</h2>
-      <div className="main-watches">
-      {watch &&
-            watch.map((product) => {
-              return <Watch product={product} key={product.id} />;
-            })}
-      </div>
-      <div className="main-head">
-        <h2>Head Phones</h2>
-        <div className="main-watches">
-          {products &&
-            products.map((product) => {
-              return <HeadPhone product={product} key={product.id} />;
-            })}
-        </div>
-      </div>
-      <div className="main-air">
-        <h2>AirPods</h2>
-        <div className="main-watches">
-          {airpods &&
-            airpods.map((airpod) => {
-              return <AirPod product={airpod} key={airpod.id} />;
-            })}
-        </div>
-      </div> */}
       <div className="main-air">
         <h2>Products</h2>
         <div className="main-watches">
           {products &&
-            products.map((airpod) => {
-              return <AirPod product={airpod} key={airpod.id} />;
+            products.map((product) => {
+              return <Product product={product} key={product.id} />;
             })}
         </div>
       </div>
