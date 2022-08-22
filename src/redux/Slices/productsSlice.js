@@ -1,15 +1,21 @@
-import HeadData from "../../Data/HeadData";
+import ProductsData from "../../Data/ProductsData";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   loading: false,
   list: [],
+  listContainer: [],
 };
 
 const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
+    filterItems: (state, { payload }) => {
+      state.list = state.listContainer.filter((user) =>
+        user.title.toLowerCase().includes(payload)
+    )
+  },
     startFetch: (state) => {
       state.loading = true
     },
@@ -17,12 +23,13 @@ const productsSlice = createSlice({
       const {payload} = action
       state.loading = false
       state.list = payload
+      state.listContainer = payload
     }
   }
 });
 
 
-export const {save , startFetch} = productsSlice.actions
+export const {save , startFetch, filterItems} = productsSlice.actions
 
 export const fetchAsyncProducts = () => {
   return async (dispatch) => {
@@ -31,7 +38,7 @@ export const fetchAsyncProducts = () => {
 
     const products = await new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(HeadData);
+        resolve(ProductsData);
       }, 1000);
     });
 

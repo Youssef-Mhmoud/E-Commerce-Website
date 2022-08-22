@@ -29,7 +29,7 @@ $primary-color: #ed4e0f;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 0;
+  z-index: 9999;
   animation: fadeOut 0.5s 3s forwards;
   .logo-load {
     text-transform: uppercase;

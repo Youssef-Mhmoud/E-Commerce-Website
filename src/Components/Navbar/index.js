@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,16 +9,24 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { total } from "../../redux/Slices/cartSlice";
-
+import { filterItems } from "../../redux/Slices/productsSlice";
 
 const Navbar = () => {
-  const dispatch = useDispatch()
-  const cart = useSelector((state) => state.cart)
+  const dispatch = useDispatch();
+  const inputRef = useRef("");
+  const [filter, setFilter] = useState('')
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setFilter(dispatch(filterItems(inputRef.current.value)))
+  };
+
+  const cart = useSelector((state) => state.cart);
 
   useEffect(() => {
-    dispatch(total())
-  }, [cart, dispatch])
-  
+    dispatch(total());
+  }, [cart, dispatch]);
+
   return (
     <header>
       <div className="container nav-bar">
@@ -26,9 +34,14 @@ const Navbar = () => {
           Shopping
         </Link>
         <div className="form">
-          <form method="get">
-            <input type="text" placeholder="Category, Shoos, Cloths ..." />
-            <button className="search-btn">
+          <form method="get" onSubmit={submitHandler}>
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Watches, HeadPhones, AirPods ..."
+              onChange={() => setFilter}
+            />
+            <button className="search-btn" type="submit">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>
           </form>
@@ -36,7 +49,9 @@ const Navbar = () => {
         <div className="user-need">
           <Link className="user" to="/login">
             <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
-          <div className="say-hello">Welcome, <span>User</span></div>
+            <div className="say-hello">
+              Welcome, <span>User</span>
+            </div>
           </Link>
           <Link className="cart" to="/cart">
             <FontAwesomeIcon icon={faCartShopping} />

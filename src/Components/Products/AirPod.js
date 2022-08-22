@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import {addToCart} from '../../redux/Slices/cartSlice'
+
 const AirPod = ({product}) => {
   const dispatch = useDispatch()
   return (
