@@ -11,7 +11,7 @@ const Watch = ({ product }) => {
         <img src={product.img} />
         <div className="info-watch">
           <h4 className="title-watch">{product.title}</h4>
-          <p className="price">{product.price}</p>
+          <p className="price">${product.price}</p>
         </div>
         <button
           className="cart-btn"

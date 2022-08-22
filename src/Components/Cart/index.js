@@ -5,11 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem/CartItem";
 import "./index.scss";
+import { clear, total  } from "../../redux/Slices/cartSlice";
+
 const Cart = () => {
   // Redux
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-
+  useEffect(() => {
+    dispatch(total())
+  }, [cart, dispatch])
   return (
     <div className="container main-cart">
       <div>
@@ -38,7 +42,7 @@ const Cart = () => {
                 })}
             </div>
             <div className="cart-summary">
-              <button className="clear">Clear Cart</button>
+              <button className="clear" onClick={() => dispatch(clear())}>Clear Cart</button>
               <div className="cart-checkout">
                 <div className="subtotal">
                   <span>Subtotal</span>
@@ -57,7 +61,6 @@ const Cart = () => {
           </>
         )}
       </div>
-      {/* <div className="general-setting">hello</div> */}
     </div>
   );
 };

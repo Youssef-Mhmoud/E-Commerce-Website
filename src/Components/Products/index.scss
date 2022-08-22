@@ -9,7 +9,6 @@
     color: #ed4e0f;
     position: relative;
 
-
     &::after {
       content: "";
       position: absolute;
@@ -76,12 +75,13 @@
       padding: 6px 8px;
       border-radius: 5px;
       font-size: 18px;
-      font-weight: 500;
+      font-weight: normal;
       cursor: pointer;
-      transition: .5s;
+      transition: 0.5s;
+      background-color: #ed4e0f;
+      color: white;
       &:hover {
-        background-color: #ed4e0f;
-        color: white;
+        opacity: .8;
       }
     }
   }
