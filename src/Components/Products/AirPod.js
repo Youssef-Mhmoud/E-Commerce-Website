@@ -11,7 +11,15 @@ const AirPod = ({product}) => {
           <h4 className="title-watch">{product.title}</h4>
           <p className="price">${product.price}</p>
         </div>
-        <button className="cart-btn" onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
+        <div className="buttons">
+          <button
+            className="cart-btn"
+            onClick={() => dispatch(addToCart(product))}
+          >
+            Add To Cart
+          </button>
+          <button className="details">Details</button>
+        </div>
       </div>
     </>
   );

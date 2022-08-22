@@ -1,3 +1,54 @@
+$primary-color: #ed4e0f;
+
+@import 'animate.css';
+@import '~loaders.css/src/animations/ball-clip-rotate-multiple.scss';
+
+.loader-active {
+  // background-color: black;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.loader-page {
+  text-align: center;
+  display: flex;
+  background-color: rgb(237, 237, 237);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  animation: fadeOut 0.5s 3s forwards;
+  .logo-load {
+    text-transform: uppercase;
+    position: absolute;
+    font-size: 40px;
+    top: 35%;
+    color: #ed4e0f;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    // animation: backInDown 1s;
+  }
+  .load {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .container {
   padding-left: 15px;
   padding-right: 15px;

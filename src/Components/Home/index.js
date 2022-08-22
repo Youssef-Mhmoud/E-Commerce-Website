@@ -17,6 +17,7 @@ import {
 import { Link } from "react-router-dom";
 import Products from "../Products";
 import { useRef } from "react";
+import Loader from "react-loaders";
 
 const Home = () => {
   // Start Slider UseState
@@ -69,6 +70,14 @@ const Home = () => {
       behavior: "smooth"
     })
   }
+
+  const indexRef = useRef()
+
+  useEffect(() => {
+    setTimeout(() => {
+      indexRef.current.style.zIndex = '-1'
+    }, 3500)
+  })
   return (
     <>
       <div className="scroll" ref={scrollToTop} onClick={scroll}>
@@ -155,6 +164,13 @@ const Home = () => {
           </div>
         </div>
         <Products />
+      </div>
+      <div className="loader-page" ref={indexRef}>
+        <h1>
+          <span className="logo-load">SHOPPIng</span>
+        </h1>
+        <br />
+        <Loader type="ball-clip-rotate-multiple" innerClassName="load" />
       </div>
     </>
   );

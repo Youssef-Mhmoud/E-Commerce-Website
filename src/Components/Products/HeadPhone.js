@@ -1,10 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import {addToCart} from '../../redux/Slices/cartSlice'
+import { Link } from "react-router-dom";
+import { addToCart } from "../../redux/Slices/cartSlice";
 
-const HeadPhone = ({product}) => {
-  const dispatch = useDispatch()
-  
+const HeadPhone = ({ product }) => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="watch-box">
@@ -13,7 +14,15 @@ const HeadPhone = ({product}) => {
           <h4 className="title-watch">{product.title}</h4>
           <p className="price">${product.price}</p>
         </div>
-        <button className="cart-btn" onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
+        <div className="buttons">
+          <button
+            className="cart-btn"
+            onClick={() => dispatch(addToCart(product))}
+          >
+            Add To Cart
+          </button>
+          <button className="details">Details</button>
+        </div>
       </div>
     </>
   );

@@ -65,11 +65,34 @@
         font-weight: 500;
       }
     }
-
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      .details {
+        display: block;
+        width: fit-content;
+        margin: 20px 10px;
+        border: 2px solid #00A186;
+        background-color: transparent;
+        padding: 6px 8px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: normal;
+        cursor: pointer;
+        transition: 0.5s;
+        background-color: #00A186;
+        color: white;
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
     .cart-btn {
       display: block;
       width: fit-content;
-      margin: 20px auto;
+      margin: 20px 10px;
       border: 2px solid #ed4e0f;
       background-color: transparent;
       padding: 6px 8px;
