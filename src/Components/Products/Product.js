@@ -1,9 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import {addToCart} from '../../redux/Slices/cartSlice'
+import { addToCart } from "../../redux/Slices/cartSlice";
+import { Link } from "react-router-dom";
+import { addToDetails } from "../../redux/Slices/detailsSlice";
 
-const Product = ({product}) => {
-  const dispatch = useDispatch()
+const Product = ({ product }) => {
+  const dispatch = useDispatch();
   return (
     <>
       <div className="watch-box">
@@ -19,7 +21,13 @@ const Product = ({product}) => {
           >
             Add To Cart
           </button>
-          <button className="details">Details</button>
+          <Link
+            to="details"
+            className="details"
+            onClick={() => dispatch(addToDetails(product))}
+          >
+            Details
+          </Link>
         </div>
       </div>
     </>

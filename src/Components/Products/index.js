@@ -14,7 +14,6 @@ const Products = () => {
   useEffect(() => {
     dispatch(fetchAsyncProducts());
   }, []);
-// console.log(products.length)
 
 
   return (
