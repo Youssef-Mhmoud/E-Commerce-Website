@@ -27,27 +27,6 @@ const Home = () => {
   const [index, setIndex] = useState(0);
   // End Slider UseState
 
-  // Start Remove Landing
-  const [remove, setRemove] = useState(true);
-  const dispatch = useDispatch()
-  const products = useSelector((state) => state.products.list);
-
-  useEffect(() => {
-    dispatch(fetchAsyncProducts());
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (products.length == 19) {
-        setRemove(true);
-      } else {
-        setRemove(false);
-      }
-      
-    }, 0);
-  }, [products])
-
-  // End Remove Landing
   // Slider
   {
     useEffect(() => {
@@ -75,6 +54,8 @@ const Home = () => {
   const handleLeft = () => {
     setIndex((prevIndex) => prevIndex - 1);
   };
+
+  // Scroll To Top
   const scrollToTop = useRef(null);
 
   useEffect(() => {
@@ -94,6 +75,7 @@ const Home = () => {
     });
   };
 
+  // Loader
   const indexRef = useRef();
 
   useEffect(() => {
@@ -107,14 +89,13 @@ const Home = () => {
         <FontAwesomeIcon icon={faAngleUp} />
       </div>
       <div className="container home-pg">
-        {remove &&  (
           <>
             <div className="landing">
               <div className="main-side">
                 <aside className="side-bar side1">
                   <ul className="list-side">
                     <li>
-                      <Link to="/">Home</Link>
+                      <Link to="/searchpage">Home</Link>
                     </li>
                     <li>
                       <Link to="/">About</Link>
@@ -190,8 +171,6 @@ const Home = () => {
               </div>
             </div>
           </>
-        )}
-
         <Products />
       </div>
       <div className="loader-page" ref={indexRef}>

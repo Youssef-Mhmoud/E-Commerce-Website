@@ -7,18 +7,20 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { total } from "../../redux/Slices/cartSlice";
 import { filterItems } from "../../redux/Slices/productsSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const inputRef = useRef("");
-  const [filter, setFilter] = useState('')
+  const [filter, setFilter] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setFilter(dispatch(filterItems(inputRef.current.value)))
+    setTimeout(() => {
+      setFilter(dispatch(filterItems(inputRef.current.value)));
+    }, 1000);
   };
 
   const cart = useSelector((state) => state.cart);
@@ -26,6 +28,11 @@ const Navbar = () => {
   useEffect(() => {
     dispatch(total());
   }, [cart, dispatch]);
+
+  const navigate = useNavigate();
+  const navigateToContacts = () => {
+    navigate("/searchpage");
+  };
 
   return (
     <header>
@@ -41,7 +48,11 @@ const Navbar = () => {
               placeholder="Watches, HeadPhones, AirPods ..."
               onChange={() => setFilter}
             />
-            <button className="search-btn" type="submit">
+            <button
+              className="search-btn"
+              type="submit"
+              onClick={navigateToContacts}
+            >
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>
           </form>

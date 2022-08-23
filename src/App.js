@@ -5,6 +5,7 @@ import Home from "./Components/Home";
 import Cart from "./Components/Cart";
 import Login from "./Components/Login";
 import Details from "./Components/Details";
+import SearchPage from "./Components/SearchPage";
 
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/details/:productId" element={<Details />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/searchpage" element={<SearchPage />} />
         </Route>
       </Routes>
     </>

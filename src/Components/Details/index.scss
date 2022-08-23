@@ -1,9 +1,10 @@
 .details-pg {
-  min-height: 100vh;
+  min-height: 100%;
   .detail-card {
     margin-top: 50px;
     display: flex;
     height: 400px;
+    margin-bottom: 100px;
   }
   .imgone{
     width: 550px;
@@ -17,6 +18,18 @@
     margin-left: 20px;
     justify-content: space-between;
 
+    .detail-title {
+      font-size: 26px;
+    }
+
+    .price-info {
+      display: flex;
+      align-items: center;
+      span {
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
     .detail-price {
       background-color: #e95317e9;
       width: fit-content;
@@ -32,6 +45,29 @@
       font-size: 15px;
       opacity: .9;
       line-height: 1.7;
+      span {
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
+
+    .add-to-card { 
+        display: block;
+        width: fit-content;
+        margin: 5px 10px;
+        border: 2px solid #ed4e0f;
+        background-color: transparent;
+        padding: 8px 30px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: normal;
+        cursor: pointer;
+        transition: 0.5s;
+        background-color: #ed4e0f;
+        color: white;
+        &:hover {
+          opacity: .8;
+        }
     }
   }
 }
