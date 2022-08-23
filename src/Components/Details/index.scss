@@ -1,5 +1,37 @@
 .details-pg {
+  min-height: 100vh;
+  .detail-card {
+    margin-top: 50px;
+    display: flex;
+    height: 400px;
+  }
   .imgone{
-    width: 100px;
+    width: 550px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+  }
+  .detail-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    justify-content: space-between;
+
+    .detail-price {
+      background-color: #e95317e9;
+      width: fit-content;
+      padding: 10px 15px;
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+      border-radius: 10px 0 10px 0;
+      margin-left: 20px;
+    }
+
+    .detail-more {
+      font-size: 15px;
+      opacity: .9;
+      line-height: 1.7;
+    }
   }
 }

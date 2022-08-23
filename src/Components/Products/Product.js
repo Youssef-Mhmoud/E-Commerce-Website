@@ -22,7 +22,7 @@ const Product = ({ product }) => {
             Add To Cart
           </button>
           <Link
-            to="details"
+            to={`/details/${product.id}`}
             className="details"
             onClick={() => dispatch(addToDetails(product))}
           >

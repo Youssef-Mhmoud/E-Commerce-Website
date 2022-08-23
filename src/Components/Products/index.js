@@ -3,8 +3,7 @@ import "./index.scss";
 import Product from "./Product";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  fetchAsyncProducts,
-  filterItems,
+  fetchAsyncProducts
 } from "../../redux/Slices/productsSlice";
 
 const Products = () => {
