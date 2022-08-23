@@ -1,10 +1,10 @@
 .details-pg {
-  min-height: 100%;
+  height: 78vh;
   .detail-card {
     margin-top: 50px;
     display: flex;
     height: 400px;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
   }
   .imgone{
     width: 550px;
@@ -15,7 +15,7 @@
   .detail-info {
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: 25px;
     justify-content: space-between;
 
     .detail-title {
@@ -54,7 +54,7 @@
     .add-to-card { 
         display: block;
         width: fit-content;
-        margin: 5px 10px;
+        margin: 5px 0;
         border: 2px solid #ed4e0f;
         background-color: transparent;
         padding: 8px 30px;

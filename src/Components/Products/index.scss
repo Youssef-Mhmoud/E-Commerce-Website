@@ -8,7 +8,9 @@
     text-align: center;
     color: #ed4e0f;
     position: relative;
-
+    &.hidden {
+      display: none;
+    }
     &::after {
       content: "";
       position: absolute;
