@@ -11,20 +11,24 @@ const Products = () => {
   useEffect(() => {
     dispatch(fetchAsyncProducts());
   }, []);
-
+  console.log(products.length);
   return (
     <div className="container products-pg">
-      <h2>Products</h2>
-      <div className="main-air">
-        <div className="main-watches">
-          {products &&
-            products.map((product) => {
-              return (
-                  <Product product={product} />
-              );
-            })}
-        </div>
-      </div>
+      {products.length === 0 ? (
+        <h3 className="not-found-result">Results Not Found !</h3>
+      ) : (
+        <>
+          <h2>Products</h2>
+          <div className="main-air">
+            <div className="main-watches">
+              {products &&
+                products.map((product) => {
+                  return <Product product={product} />;
+                })}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

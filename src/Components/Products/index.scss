@@ -1,5 +1,11 @@
 .products-pg {
+  min-height: 100vh;
   margin-top: 100px;
+  .not-found-result {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+  }
   h2 {
     width: fit-content;
     margin: 60px auto;

@@ -63,7 +63,7 @@ export default [
     price: 640,
   },
   {
-    sear: "watch 1, ساعة 1 ",
+    sear: "headphone 6, سماعة 6 ",
     id: 10,
     img: require("../assests/imgs/headphone/6-headphone.jpg"),
     title: "HeadPhone 6",
