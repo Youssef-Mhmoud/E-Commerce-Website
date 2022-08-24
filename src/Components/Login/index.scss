@@ -27,8 +27,6 @@
       text-align: center;
       .inputs {
         display: inline-block;
-      }
-      .inputs {
         .fn {
           display: none;
           &.show {
@@ -140,14 +138,13 @@
         caret-color: #ed4e0f;
         display: inline-block;
         color: black;
-        caret-color: black;
         padding: 8px 7px;
         margin: 25px 20px;
         font-size: 18px;
         outline: none;
         background-color: transparent;
         // border: none;
-        border: 1px solid rgba(0, 0, 0, 0.364);
+        border: 1px solid #ed4e0fb8;
         border-radius: 3px;
         &:hover {
           outline: none;
