@@ -105,9 +105,9 @@ const Home = () => {
                   </li>
                   <li>
                     {firstName === "" ? (
-                      <Link to="/login">SignUp</Link>
+                      <Link to="/login" className="sign-btn">SignUp</Link>
                     ) : (
-                      <h2>
+                      <h2 className="name-co">
                         {firstName} {lastName}
                       </h2>
                     )}
@@ -118,7 +118,7 @@ const Home = () => {
                 <h2>About</h2>
                 <p className="info-about">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vestibulum molestie vulputate mollis. Ut maximus tortor
+                  Vestibulum molestie vulputate mollis. Ut maximus tortorUt ma
                 </p>
                 <Link to="/" className="about-btn">
                   More Details
