@@ -42,6 +42,9 @@ const Navbar = () => {
     userRef.current.classList.toggle("show");
   };
 
+  const refresh = () => {
+    window.location.reload()
+  }
   return (
     <header>
       <div className="container nav-bar">
@@ -90,6 +93,7 @@ const Navbar = () => {
                       Your Phone: <span>{phone}</span>
                     </p>
                   </div>
+                  <button className="signup-btn logout" onClick={refresh}>LogOut</button>
                 </>
               )}
             </div>

@@ -26,39 +26,48 @@ const Login = () => {
   const navigate = useNavigate();
   const homeNavigate = () => {
     if (firstName === "") {
-      fnRef.current.classList.add('show')
+      fnRef.current.classList.add("show");
     } else {
-      fnRef.current.classList.remove('show')
+      fnRef.current.classList.remove("show");
     }
     if (lastName === "") {
-      lnRef.current.classList.add('show')
+      lnRef.current.classList.add("show");
     } else {
-      lnRef.current.classList.remove('show')
+      lnRef.current.classList.remove("show");
     }
     if (email === "") {
-      emRef.current.classList.add('show')
+      emRef.current.classList.add("show");
     } else {
-      emRef.current.classList.remove('show')
+      emRef.current.classList.remove("show");
     }
     if (phone === "") {
-      phRef.current.classList.add('show')
+      phRef.current.classList.add("show");
     } else {
-      phRef.current.classList.remove('show')
+      phRef.current.classList.remove("show");
     }
     if (password === "") {
-      ps1Ref.current.classList.add('show')
+      ps1Ref.current.classList.add("show");
     } else {
-      ps1Ref.current.classList.remove('show')
+      ps1Ref.current.classList.remove("show");
     }
     if (confirmPassword === "") {
-      ps2Ref.current.classList.add('show')
+      ps2Ref.current.classList.add("show");
     } else {
-      ps2Ref.current.classList.remove('show')
+      ps2Ref.current.classList.remove("show");
     }
-    if ((firstName,lastName,email,phone,password,confirmPassword) === '') {
-      return "not"
+    if (
+      (firstName &&
+        lastName &&
+        email &&
+        phone &&
+        password &&
+        confirmPassword) === ""
+    ) {
+      return "not";
     } else {
-      navigate("/")
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
     }
   };
 
@@ -106,7 +115,7 @@ const Login = () => {
                   placeholder="Last Name"
                   onChange={(e) => setLasttName(e.target.value)}
                 />
-                <div className="fn" ref={lnRef} >
+                <div className="fn" ref={lnRef}>
                   <FontAwesomeIcon
                     icon={faCircleExclamation}
                     className="exc2"
@@ -187,7 +196,7 @@ const Login = () => {
           <span className="logo-load">SHOPPIng</span>
         </h1>
         <br />
-        {/* <Loader type="ball-clip-rotate-multiple" innerClassName="load" /> */}
+        <Loader type="ball-clip-rotate-multiple" innerClassName="load" />
       </div>
     </>
   );
