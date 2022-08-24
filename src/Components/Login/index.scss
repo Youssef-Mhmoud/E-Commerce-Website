@@ -1,3 +1,69 @@
 .login-pg {
   min-height: 100vh;
+
+  .title-log {
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ed4e0f;
+    text-align: center;
+    margin-top: 30px;
+    display: block;
+  }
+  .form {
+    // background-color: #97330b;
+    width: 550px;
+    // box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    min-height: 400px;
+    margin: auto;
+    // margin-top: 30px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    form {
+      width: 100%;
+      margin: 20px auto;
+      text-align: center;
+      input {
+        caret-color: #ed4e0f;
+        display: inline-block;
+        color: black;
+        caret-color: black;
+        padding: 8px 7px;
+        margin: 25px 20px;
+        font-size: 18px;
+        outline: none;
+        background-color: transparent;
+        // border: none;
+        border: 1px solid rgba(0, 0, 0, 0.364);
+        border-radius: 3px;
+        &:hover {
+          outline: none;
+        }
+      }
+      .btn-submit {
+        display: block;
+        width: 50%;
+        margin: 10px auto;
+        border: 2px solid #ed4e0f;
+        background-color: transparent;
+        padding: 6px 0px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: normal;
+        cursor: pointer;
+        transition: 0.5s;
+        background-color: #ed4e0f;
+        color: white;
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+  }
+}
+
+::placeholder {
+  color: rgba(2, 0, 0, 0.615);
 }

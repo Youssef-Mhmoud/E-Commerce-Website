@@ -15,7 +15,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const inputRef = useRef("");
   const [filter, setFilter] = useState("");
-
+  const {firstName, lastName} = useSelector(state => state.user)
   const submitHandler = (e) => {
     e.preventDefault();
     setTimeout(() => {
@@ -61,7 +61,7 @@ const Navbar = () => {
           <Link className="user" to="/login">
             <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
             <div className="say-hello">
-              Welcome, <span>User</span>
+              Welcome, <span>{firstName}</span>
             </div>
           </Link>
           <Link className="cart" to="/cart">
