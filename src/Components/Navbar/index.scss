@@ -8,10 +8,10 @@ header {
     justify-content: space-between;
 
     .logo {
-      font-size: 20px;
+      font-size: 23px;
       font-weight: bold;
       text-decoration: none;
-      color: black;
+      color: #e95317;
       text-transform: uppercase;
     }
 
@@ -53,49 +53,57 @@ header {
 
     .user-need {
       display: flex;
-      align-items: center;
+      align-items: center; 
 
       .user {
         display: block;
         color: white;
         text-decoration: none;
         margin-right: 15px;
-        position: relative;
+        background-color: transparent;
+        border: none;
+        // position: relative;
 
-        &:hover .say-hello {
-          display: block;
-        }
         .user-icon {
+          cursor: pointer;
           color: #e95317;
-          font-size: 22px;
+          font-size: 25px;
         }
 
         .say-hello {
-          display: none;
+          opacity: 0;
           position: absolute;
-          background-color: #e95317;
-          // box-shadow: 2px 15px 20px rgba(0, 0, 0, 0.544);
+          text-align: left;
+          background-color: #b04609;
+          box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.3);
           padding: 20px;
-          left: 50%;
-          top: 43px;
-          transform: translateX(-50%);
-          width: 120px;
+          right: -100%;
+          top: 63px;
+          width: 250px;
           font-size: 18px;
           z-index: 1;
-          border-radius: 5px;
-
-          &::after {
-            content: "";
-            position: absolute;
-            transform: translateX(-50%);
-            left: 50%;
-            top: -58%;
-            border-color: transparent transparent #e95317 transparent;
-            border-width: 20px;
-            border-style: solid;
+          border-radius: 0 0 0 5px;
+          transition: .4s;
+          &.show {
+            opacity: 1;
+            right: 0;
           }
           span {
             font-weight: 600;
+          }
+          .don {
+            margin-top: -5px;
+            text-align: center;
+          }
+          .signup-btn {
+            background-color: #ffffff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: black;
+            text-decoration: none;
+            display: block;
+            width: fit-content;
+            margin: 10px auto;
           }
         }
       }

@@ -55,6 +55,9 @@ const Home = () => {
     setIndex((prevIndex) => prevIndex - 1);
   };
 
+  // user 
+  const {firstName, lastName} = useSelector(state => state.user)
+
   // Scroll To Top
   const scrollToTop = useRef(null);
 
@@ -95,13 +98,13 @@ const Home = () => {
                 <aside className="side-bar side1">
                   <ul className="list-side">
                     <li>
+                      <h2>{firstName} {lastName}</h2>
+                    </li>
+                    <li>
                       <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <Link to="/">About</Link>
-                    </li>
-                    <li>
-                      <Link to="/">Cart</Link>
+                      <Link to="/cart">Cart</Link>
                     </li>
                   </ul>
                 </aside>
@@ -110,8 +113,7 @@ const Home = () => {
                   <p className="info-about">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Vestibulum molestie vulputate mollis. Ut maximus tortor
-                    eros, ut interdum nulla semper vel. Nulla facilisi.
-                    Pellentesque habitant
+                    
                   </p>
                   <Link to="/" className="about-btn">
                     More Details

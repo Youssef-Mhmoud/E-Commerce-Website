@@ -25,6 +25,117 @@
       width: 100%;
       margin: 20px auto;
       text-align: center;
+      .inputs {
+        display: inline-block;
+      }
+      .inputs {
+        .fn {
+          display: none;
+          &.show {
+            display: block;
+          }
+        }
+        position: relative;
+        .exc1 {
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: red;
+        }
+        .error1 {
+          font-size: 14px;
+          color: red;
+          position: absolute;
+          bottom: -13px;
+          left: 8%;
+        }
+      }
+      .lname {
+        position: relative;
+        .exc2 {
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: red;
+        }
+        .error2 {
+          font-size: 14px;
+          color: red;
+          position: absolute;
+          bottom: -13px;
+          left: 8%;
+        }
+      }
+      .em1 {
+        position: relative;
+        .exc3 {
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: red;
+        }
+        .error3 {
+          font-size: 14px;
+          color: red;
+          position: absolute;
+          bottom: -13px;
+          left: 8%;
+        }
+      }
+      .phone1 {
+        position: relative;
+        .exc4 {
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: red;
+        }
+        .error4 {
+          font-size: 14px;
+          color: red;
+          position: absolute;
+          bottom: -13px;
+          left: 8%;
+        }
+      }
+      .pass2 {
+        position: relative;
+        .exc6 {
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: red;
+        }
+        .error6 {
+          font-size: 14px;
+          color: red;
+          position: absolute;
+          bottom: -13px;
+          left: 8%;
+        }
+      }
+      .pass1 {
+        position: relative;
+        .exc5 {
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: red;
+        }
+        .error5 {
+          font-size: 14px;
+          color: red;
+          position: absolute;
+          bottom: -13px;
+          left: 8%;
+        }
+      }
       input {
         caret-color: #ed4e0f;
         display: inline-block;

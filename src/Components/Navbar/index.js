@@ -7,7 +7,7 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { total } from "../../redux/Slices/cartSlice";
 import { filterItems } from "../../redux/Slices/productsSlice";
 
@@ -15,7 +15,9 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const inputRef = useRef("");
   const [filter, setFilter] = useState("");
-  const {firstName, lastName} = useSelector(state => state.user)
+  const { firstName, lastName, email, phone } = useSelector(
+    (state) => state.user
+  );
   const submitHandler = (e) => {
     e.preventDefault();
     setTimeout(() => {
@@ -32,6 +34,12 @@ const Navbar = () => {
   const navigate = useNavigate();
   const navigateToContacts = () => {
     navigate("/searchpage");
+  };
+
+  // Show User Details
+  const userRef = useRef();
+  const userDetails = () => {
+    userRef.current.classList.toggle("show");
   };
 
   return (
@@ -58,12 +66,34 @@ const Navbar = () => {
           </form>
         </div>
         <div className="user-need">
-          <Link className="user" to="/login">
+          <button className="user" onClick={userDetails}>
             <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
-            <div className="say-hello">
-              Welcome, <span>{firstName}</span>
+            <div className="say-hello" ref={userRef}>
+              {firstName === "" ? (
+                <>
+                <p className="don">Don't Signup.. ?</p>
+                <Link to="/login" className="signup-btn">SignUp</Link>
+                </>
+              ) : (
+                <>
+                  <div>
+                    Welcome,{" "}
+                    <span>
+                      {firstName} {lastName}
+                    </span>
+                  </div>
+                  <div>
+                    <p>
+                      Your Email: <span>{email}</span>
+                    </p>
+                    <p>
+                      Your Phone: <span>{phone}</span>
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
-          </Link>
+          </button>
           <Link className="cart" to="/cart">
             <FontAwesomeIcon icon={faCartShopping} />
             <span className="count-cart">{cart.cartTotalQuantity}</span>
