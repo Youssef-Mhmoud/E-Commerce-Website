@@ -13,7 +13,7 @@ const productsSlice = createSlice({
   reducers: {
     filterItems: (state, { payload }) => {
       state.list = state.listContainer.filter((user) =>
-        user.title.toLowerCase().includes(payload)
+        user.sear.toLowerCase().includes(payload)
     )
   },
     startFetch: (state) => {

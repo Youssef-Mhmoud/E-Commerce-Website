@@ -95,7 +95,7 @@ const Home = () => {
                 <aside className="side-bar side1">
                   <ul className="list-side">
                     <li>
-                      <Link to="/searchpage">Home</Link>
+                      <Link to="/">Home</Link>
                     </li>
                     <li>
                       <Link to="/">About</Link>
