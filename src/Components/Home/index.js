@@ -189,47 +189,51 @@ const Home = () => {
             </div>
           </div>
         </>
-          <h2 className="title-best">Best Seller</h2>
-          <div div className="main-watches">
-            {bestSeller &&
-              bestSeller.map((best) => {
-                return (
-                  <>
-                    <div className="watch-box">
-                      <div className="best-badge">Best 
-                      </div>
-                      <img src={best.img} />
-                      <div className="info-watch">
-                        <h4 className="title-watch">{best.title}</h4>
-                        <p className="price">${best.price}</p>
-                      </div>
-                      <div className="buttons">
-                        <button
-                          className="cart-btn"
-                          onClick={() => dispatch(addToCart(best))}
-                        >
-                          Add To Cart
-                        </button>
-                        <Link
-                          to={`/details/${best.id}`}
-                          className="details"
-                          onClick={() => dispatch(addToDetails(best))}
-                        >
-                          Details
-                        </Link>
-                      </div>
+        <h2 className="title-best">Best Seller</h2>
+        <div div className="main-watches">
+          {bestSeller &&
+            bestSeller.map((best) => {
+              return (
+                <>
+                  <div className="watch-box">
+                    <div className="best-badge">Best</div>
+                    <img src={best.img} />
+                    <div className="info-watch">
+                      <h4 className="title-watch">{best.title}</h4>
+                      <p className="price">${best.price}</p>
                     </div>
-                  </>
-                );
-              })}
+                    <div className="buttons">
+                      <button
+                        className="cart-btn"
+                        onClick={() => dispatch(addToCart(best))}
+                      >
+                        Add To Cart
+                      </button>
+                      <Link
+                        to={`/details/${best.id}`}
+                        className="details"
+                        onClick={() => dispatch(addToDetails(best))}
+                      >
+                        Details
+                      </Link>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
+        </div>
+      </div>
+      <div className="land-bg">
+        <div className="img-bg">
+          <div className="img-info">
+            <p>If You Don't Get Any Product Go To Search And Go Shopping</p>
+            <button onClick={scroll} className="btn-scr">Go Shopping</button>
           </div>
-          <div>
-            
-          </div>
+        </div>
       </div>
       <div className="loader-page" ref={indexRef}>
         <h1>
-          <span className="logo-load">SHOPPIng</span>
+          <span className="logo-load">Shopping</span>
         </h1>
         <br />
         <Loader type="ball-clip-rotate-multiple" innerClassName="load" />
