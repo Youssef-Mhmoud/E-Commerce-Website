@@ -1,5 +1,5 @@
 .login-pg {
-  min-height: 100vh;
+  min-height: calc(100vh - 186px);
 
   .title-log {
     text-transform: uppercase;
@@ -165,7 +165,7 @@
         background-color: #ed4e0f;
         color: white;
         &:hover {
-          opacity: .8;
+          opacity: 0.8;
         }
       }
     }
