@@ -11,7 +11,7 @@ const Products = () => {
   useEffect(() => {
     dispatch(fetchAsyncProducts());
   }, []);
-  console.log(products.length);
+
   return (
     <div className="container products-pg">
       {products.length === 0 ? (

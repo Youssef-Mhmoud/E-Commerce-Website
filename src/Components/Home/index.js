@@ -6,6 +6,7 @@ import {
   faAngleRight,
   faAngleLeft,
   faAngleUp,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faApple,
@@ -20,6 +21,9 @@ import { useRef } from "react";
 import Loader from "react-loaders";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncProducts } from "../../redux/Slices/productsSlice";
+import { fetchAsyncBest } from "../../redux/Slices/bestSellerSlice";
+import { addToCart } from "../../redux/Slices/cartSlice";
+import { addToDetails } from "../../redux/Slices/detailsSlice";
 
 const Home = () => {
   // Start Slider UseState
@@ -77,7 +81,12 @@ const Home = () => {
       behavior: "smooth",
     });
   };
-
+  // Best Seller Fetch
+  const dispatch = useDispatch();
+  const bestSeller = useSelector((state) => state.bestSeller.list);
+  useEffect(() => {
+    dispatch(fetchAsyncBest());
+  }, []);
   // Loader
   const indexRef = useRef();
 
@@ -105,7 +114,9 @@ const Home = () => {
                   </li>
                   <li>
                     {firstName === "" ? (
-                      <Link to="/login" className="sign-btn">SignUp</Link>
+                      <Link to="/login" className="sign-btn">
+                        SignUp
+                      </Link>
                     ) : (
                       <h2 className="name-co">
                         {firstName} {lastName}
@@ -178,7 +189,43 @@ const Home = () => {
             </div>
           </div>
         </>
-        <Products />
+          <h2 className="title-best">Best Seller</h2>
+          <div div className="main-watches">
+            {bestSeller &&
+              bestSeller.map((best) => {
+                return (
+                  <>
+                    <div className="watch-box">
+                      <div className="best-badge">Best 
+                      </div>
+                      <img src={best.img} />
+                      <div className="info-watch">
+                        <h4 className="title-watch">{best.title}</h4>
+                        <p className="price">${best.price}</p>
+                      </div>
+                      <div className="buttons">
+                        <button
+                          className="cart-btn"
+                          onClick={() => dispatch(addToCart(best))}
+                        >
+                          Add To Cart
+                        </button>
+                        <Link
+                          to={`/details/${best.id}`}
+                          className="details"
+                          onClick={() => dispatch(addToDetails(best))}
+                        >
+                          Details
+                        </Link>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
+          </div>
+          <div>
+            
+          </div>
       </div>
       <div className="loader-page" ref={indexRef}>
         <h1>
