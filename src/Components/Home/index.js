@@ -227,7 +227,35 @@ const Home = () => {
         <div className="img-bg">
           <div className="img-info">
             <p>If You Don't Get Any Product Go To Search And Go Shopping</p>
-            <button onClick={scroll} className="btn-scr">Go Shopping</button>
+            <button onClick={scroll} className="btn-scr">
+              Go Shopping
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="land-dis">
+        <h2 className="title-best">Event</h2>
+        <h3>Enter Your Email Before Ending This Event</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+          molestie vulputate mollis. Ut maximus tortorUt ma
+        </p>
+        <div className="dis-box">
+          <div class="unit">
+            <span class="days">20</span>
+            <span>Days</span>
+          </div>
+          <div class="unit">
+            <span class="hours">24</span>
+            <span>Hours</span>
+          </div>
+          <div class="unit">
+            <span class="Minutes">59</span>
+            <span>Minutes</span>
+          </div>
+          <div class="unit">
+            <span class="Seconds">59</span>
+            <span>Seconds</span>
           </div>
         </div>
       </div>
