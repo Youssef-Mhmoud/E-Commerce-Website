@@ -33,24 +33,58 @@
 }
 .home-pg {
   .landing {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 20px;
+    max-width: 100%;
     .main-side {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 510px;
+      grid-column: 1/2;
+      
+      @media(max-width: 1199px) {
+        & {
+          grid-row: 2/2;
+          grid-column: 1/5;
+          flex-direction: row;
+        }
+      }
+      @media(max-width: 530px) {
+        & {
+          flex-direction: column;
+        }
+      }
     }
     .side-bar {
       max-width: 250px;
       box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.3);
       padding: 10px;
       border-radius: 5px;
-      margin-top: 17px;
+      margin-top: 20px;
       text-align: center;
+      @media(max-width: 1199px) {
+        & {
+          max-width: 100%;
+        }
+      }
       &.side1 {
+        @media(max-width: 1199px) {
+          & {
+            width: 47%;
+          }
+        }
+        @media(max-width: 991px) {
+          & {
+            width: 45%;
+          }
+        }
+        @media(max-width: 530px) {
+          & {
+            width: 95%;
+          }
+        }
         .list-side {
           padding: 0;
           list-style: none;
@@ -81,8 +115,24 @@
           }
         }
       }
-
+      
       &.side2 {
+        @media(max-width: 1199px) {
+          & {
+            width: 47%;
+          }
+        }
+        @media(max-width: 991px) {
+          & {
+            width: 45%;
+          }
+        }
+        @media(max-width: 530px) {
+          & {
+            width: 95%;
+          }
+        }
+      
         p {
           line-height: 1.4;
         }
@@ -106,16 +156,25 @@
       }
     }
     .slider {
+      grid-column: 2/5;
       position: relative;
       overflow: hidden;
       display: flex;
-      // margin: auto;
       margin-top: 20px;
       box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.52);
       border-radius: 5px;
-      width: 850px;
+      width: 870px;
       height: 500px;
+      max-width: 100%;
+      @media(max-width: 1199px) {
+        & {
+          width: 100%;
+          grid-column: 1/5;
+        }
+      }
+
       .img {
+        max-width: 100%;
         width: 100%;
         height: 100%;
         opacity: 0;
@@ -179,7 +238,7 @@
     // padding: 25px;
     box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.3);
     margin: 20px 0;
-    overflow: hidden;
+    overflow-y: hidden;
     border-radius: 5px;
     .box {
       padding: 20px 30px 0;

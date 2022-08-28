@@ -15,12 +15,12 @@ import {
   faMicrosoft,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
-// import Products from "../Products";
 import { useRef } from "react";
 import Loader from "react-loaders";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncProducts } from "../../redux/Slices/productsSlice";
 import Products from '../Products'
+
 const Home = () => {
   // Start Slider UseState
   const [data, setData] = useState(SliderData);
@@ -77,12 +77,7 @@ const Home = () => {
       behavior: "smooth",
     });
   };
-  // Best Seller Fetch
-  const dispatch = useDispatch();
-  const products = useSelector((state) => state.products.list);
-  useEffect(() => {
-    dispatch(fetchAsyncProducts());
-  }, []);
+
   // Loader
   const indexRef = useRef();
 
@@ -97,7 +92,6 @@ const Home = () => {
         <FontAwesomeIcon icon={faAngleUp} />
       </div>
       <div className="container home-pg">
-        <>
           <div className="landing">
             <div className="main-side">
               <aside className="side-bar side1">
@@ -184,7 +178,6 @@ const Home = () => {
               <h4>Behance</h4>
             </div>
           </div>
-        </>
         <div div className="main-watches">
           <Products />
         </div>
