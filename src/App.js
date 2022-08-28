@@ -8,8 +8,6 @@ import Details from "./Components/Details";
 import SearchPage from "./Components/SearchPage";
 
 
-
-
 function App() {
   return (
     <>

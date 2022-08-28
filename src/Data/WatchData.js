@@ -1,0 +1,58 @@
+export default [
+  {
+    sear: "watch 1, ساعة 1 ",
+    id: 11,
+    img: require("../assests/imgs/watch/1-watch.jpg"),
+    title: "Watch 1",
+    price: 1050,
+  },
+  {
+    sear: "watch 2, ساعة 2 ",
+    id: 12,
+    img: require("../assests/imgs/watch/2-watch.jpg"),
+    title: "Watch 2",
+    price: 770,
+  },
+  {
+    sear: "watch 3, ساعة 3 ",
+    id: 13,
+    img: require("../assests/imgs/watch/3-watch.jpg"),
+    title: "Watch 3",
+    price: 250,
+  },
+  {
+    sear: "watch 4, ساعة 4 ",
+    id: 14,
+    img: require("../assests/imgs/watch/4-watch.jpg"),
+    title: "Watch 4",
+    price: 1500,
+  },
+  {
+    sear: "watch 5, ساعة 5 ",
+    id: 15,
+    img: require("../assests/imgs/watch/5-watch.jpg"),
+    title: "Watch 5",
+    price: 640,
+  },
+  {
+    sear: "watch 6, ساعة 6 ",
+    id: 16,
+    img: require("../assests/imgs/watch/6-watch.jpg"),
+    title: "Watch 6",
+    price: 789,
+  },
+  {
+    sear: "watch 7, ساعة 7 ",
+    id: 17,
+    img: require("../assests/imgs/watch/7-watch.jpg"),
+    title: "Watch 7",
+    price: 550,
+  },
+  {
+    sear: "watch 8, ساعة 8 ",
+    id: 18,
+    img: require("../assests/imgs/watch/8-watch.jpg"),
+    title: "Watch 8",
+    price: 490,
+  },
+]

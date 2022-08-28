@@ -16,15 +16,14 @@ import {
   faMicrosoft,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
-import Products from "../Products";
+// import Products from "../Products";
 import { useRef } from "react";
 import Loader from "react-loaders";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncProducts } from "../../redux/Slices/productsSlice";
-import { fetchAsyncBest } from "../../redux/Slices/bestSellerSlice";
 import { addToCart } from "../../redux/Slices/cartSlice";
 import { addToDetails } from "../../redux/Slices/detailsSlice";
-
+import Products from '../Products'
 const Home = () => {
   // Start Slider UseState
   const [data, setData] = useState(SliderData);
@@ -83,9 +82,9 @@ const Home = () => {
   };
   // Best Seller Fetch
   const dispatch = useDispatch();
-  const bestSeller = useSelector((state) => state.bestSeller.list);
+  const products = useSelector((state) => state.products.list);
   useEffect(() => {
-    dispatch(fetchAsyncBest());
+    dispatch(fetchAsyncProducts());
   }, []);
   // Loader
   const indexRef = useRef();
@@ -189,74 +188,8 @@ const Home = () => {
             </div>
           </div>
         </>
-        <h2 className="title-best">Best Seller</h2>
         <div div className="main-watches">
-          {bestSeller &&
-            bestSeller.map((best) => {
-              return (
-                <>
-                  <div className="watch-box">
-                    <div className="best-badge">Best</div>
-                    <img src={best.img} />
-                    <div className="info-watch">
-                      <h4 className="title-watch">{best.title}</h4>
-                      <p className="price">${best.price}</p>
-                    </div>
-                    <div className="buttons">
-                      <button
-                        className="cart-btn"
-                        onClick={() => dispatch(addToCart(best))}
-                      >
-                        Add To Cart
-                      </button>
-                      <Link
-                        to={`/details/${best.id}`}
-                        className="details"
-                        onClick={() => dispatch(addToDetails(best))}
-                      >
-                        Details
-                      </Link>
-                    </div>
-                  </div>
-                </>
-              );
-            })}
-        </div>
-      </div>
-      <div className="land-bg">
-        <div className="img-bg">
-          <div className="img-info">
-            <p>If You Don't Get Any Product Go To Search And Go Shopping</p>
-            <button onClick={scroll} className="btn-scr">
-              Go Shopping
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="land-dis">
-        <h2 className="title-best">Event</h2>
-        <h3>Enter Your Email Before Ending This Event</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-          molestie vulputate mollis. Ut maximus tortorUt ma
-        </p>
-        <div className="dis-box">
-          <div class="unit">
-            <span class="days">20</span>
-            <span>Days</span>
-          </div>
-          <div class="unit">
-            <span class="hours">24</span>
-            <span>Hours</span>
-          </div>
-          <div class="unit">
-            <span class="Minutes">59</span>
-            <span>Minutes</span>
-          </div>
-          <div class="unit">
-            <span class="Seconds">59</span>
-            <span>Seconds</span>
-          </div>
+          <Products />
         </div>
       </div>
       <div className="loader-page" ref={indexRef}>
