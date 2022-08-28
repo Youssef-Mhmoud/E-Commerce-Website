@@ -6,7 +6,6 @@ import {
   faAngleRight,
   faAngleLeft,
   faAngleUp,
-  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faApple,
@@ -21,8 +20,6 @@ import { useRef } from "react";
 import Loader from "react-loaders";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncProducts } from "../../redux/Slices/productsSlice";
-import { addToCart } from "../../redux/Slices/cartSlice";
-import { addToDetails } from "../../redux/Slices/detailsSlice";
 import Products from '../Products'
 const Home = () => {
   // Start Slider UseState
