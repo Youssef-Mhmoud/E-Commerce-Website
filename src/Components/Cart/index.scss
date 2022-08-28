@@ -30,6 +30,11 @@
   align-items: center;
   grid-template-columns: 3fr 1fr 1fr 1fr;
   gap: 0.5rem;
+  @media(max-width: 600px) {
+    & {
+      
+    }
+  }
 
   h3 {
     font-size: 14px;
@@ -55,6 +60,12 @@
   align-items: flex-start;
   padding-top: 1.5rem;
 
+  @media(max-width: 600px) {
+    & {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
   .clear {
     width: 130px;
     max-width: 100%;
@@ -71,6 +82,11 @@
   .cart-checkout {
     width: 270px;
     max-width: 100%;
+    @media(max-width: 600px) {
+      & {
+        margin: 100px auto;
+      }
+    }
 
     .subtotal {
       display: flex;
