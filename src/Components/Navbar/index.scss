@@ -19,8 +19,21 @@ header {
       @media (max-width: 600px) {
         display: none;
       }
+      .x-hid {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        right: 5%;
+        top: 20%;
+        font-size: 35px;
+        color: white;
+      }
       &.show {
         display: block;
+        .x-hid  {
+          display: block;
+        }
+        
         @media (max-width: 600px) {
           & {
             z-index: 100000;
@@ -34,27 +47,18 @@ header {
           }
         }
       }
-      .x-hid {
-        cursor: pointer;
-        position: absolute;
-        right: 5%;
-        top: 20%;
-        font-size: 35px;
-        color: white;
-      }
+
       flex-basis: 50%;
       form {
-          @media (max-width: 600px) {
-            & {
-              width: 80%;
-              position: absolute;
-              left: 50%;
-              top: 50%;
-              transform: translate(-50%, -50%);
-            }
+        @media (max-width: 600px) {
+          & {
+            width: 80%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
           }
-
-      
+        }
 
         display: flex;
         input {

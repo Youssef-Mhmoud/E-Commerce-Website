@@ -1,16 +1,31 @@
 .details-pg {
   height: calc(100vh - 176px);
+  @media(max-width: 991px) {
+    & {
+      height: 120vh;
+    }
+  }
   .detail-card {
     margin-top: 50px;
     display: flex;
     height: 400px;
     margin-bottom: 10px;
+    @media(max-width: 991px) {
+      & {
+        flex-direction: column;
+      }
+    }
   }
   .imgone{
     width: 550px;
     max-width: 100%;
     max-height: 100%;
     border-radius: 5px;
+    @media(max-width: 991px) {
+      & {
+        width: 100%;
+      }
+    }
   }
   .detail-info {
     display: flex;
