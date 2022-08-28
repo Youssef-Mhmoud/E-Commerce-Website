@@ -5,6 +5,7 @@ import {
   faCartShopping,
   faCircleUser,
   faMagnifyingGlass,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -22,6 +23,7 @@ const Navbar = () => {
     e.preventDefault();
     setTimeout(() => {
       setFilter(dispatch(filterItems(inputRef.current.value)));
+      foRef.current.classList.remove("show");
     }, 1000);
   };
 
@@ -43,15 +45,26 @@ const Navbar = () => {
   };
 
   const refresh = () => {
-    window.location.reload()
-  }
+    window.location.reload();
+  };
+
+  // Show Form
+  const foRef = useRef(null);
+  const showForm = () => {
+    foRef.current.classList.add("show");
+  };
+  const hidForm = () => {
+    foRef.current.classList.remove("show");
+  };
   return (
     <header>
       <div className="container nav-bar">
         <Link to="/" className="logo">
           Shopping
         </Link>
-        <div className="form">
+        <div className="form" ref={foRef}>
+          <FontAwesomeIcon icon={faXmark} className="x-hid" onClick={hidForm}/>
+
           <form method="get" onSubmit={submitHandler}>
             <input
               ref={inputRef}
@@ -69,13 +82,18 @@ const Navbar = () => {
           </form>
         </div>
         <div className="user-need">
+          <div className="cart mag" to="/cart" onClick={showForm}>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </div>
           <button className="user" onClick={userDetails}>
             <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
             <div className="say-hello" ref={userRef}>
               {firstName === "" ? (
                 <>
-                <p className="don">Don't Signup.. ?</p>
-                <Link to="/login" className="signup-btn">SignUp</Link>
+                  <p className="don">Don't Signup.. ?</p>
+                  <Link to="/login" className="signup-btn">
+                    SignUp
+                  </Link>
                 </>
               ) : (
                 <>
@@ -93,7 +111,9 @@ const Navbar = () => {
                       Your Phone: <span>{phone}</span>
                     </p>
                   </div>
-                  <button className="signup-btn logout" onClick={refresh}>LogOut</button>
+                  <button className="signup-btn logout" onClick={refresh}>
+                    LogOut
+                  </button>
                 </>
               )}
             </div>
