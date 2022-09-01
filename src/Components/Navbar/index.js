@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { total } from "../../redux/Slices/cartSlice";
 import { filterItems } from "../../redux/Slices/productsSlice";
+import { logOut } from "../../redux/Slices/userSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -42,10 +43,6 @@ const Navbar = () => {
   const userRef = useRef();
   const userDetails = () => {
     userRef.current.classList.toggle("show");
-  };
-
-  const refresh = () => {
-    window.location.reload();
   };
 
   // Show Form
@@ -111,7 +108,7 @@ const Navbar = () => {
                       Your Phone: <span>{phone}</span>
                     </p>
                   </div>
-                  <button className="signup-btn logout" onClick={refresh}>
+                  <button className="signup-btn logout" onClick={() => dispatch(logOut())}>
                     LogOut
                   </button>
                 </>

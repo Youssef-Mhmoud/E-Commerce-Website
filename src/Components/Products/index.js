@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
 import Product from "./Product";
 import { useDispatch, useSelector } from "react-redux";

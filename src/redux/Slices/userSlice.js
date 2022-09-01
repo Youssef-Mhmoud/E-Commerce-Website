@@ -11,17 +11,20 @@ export const UserSlice = createSlice({
     confirmPassword: '',
   },
   reducers: {
-    addUser: (state,action) => {
-      state.firstName = action.payload.firstName
-      state.lastName = action.payload.lastName
-      state.email = action.payload.email
-      state.phone = action.payload.phone
-      state.password = action.payload.password
-      state.confirmPassword = action.payload.confirmPassword
+    addUser: (state,{payload}) => {
+      state.firstName = payload.firstName
+      state.lastName = payload.lastName
+      state.email = payload.email
+      state.phone = payload.phone
+      state.password = payload.password
+      state.confirmPassword = payload.confirmPassword
+    },
+    logOut: (state, {payload}) => {
+      state.firstName = ''
     }
   },
 });
 
-export const { addUser } = UserSlice.actions;
+export const { addUser, logOut } = UserSlice.actions;
 
 export default UserSlice.reducer;

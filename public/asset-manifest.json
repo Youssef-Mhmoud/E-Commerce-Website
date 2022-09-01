@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b21ea401.css",
+    "main.js": "/static/js/main.76ff30b0.js",
+    "static/media/7-watch.jpg": "/static/media/7-watch.b90a717024dc463b8ddf.jpg",
+    "static/media/sale.jpg": "/static/media/sale.6bd16bbc0092a138cc31.jpg",
+    "static/media/more-watches.jpg": "/static/media/more-watches.a56fa6cd3773c901508b.jpg",
+    "static/media/1-watch.jpg": "/static/media/1-watch.86bc551c423683620125.jpg",
+    "static/media/tech.jpg": "/static/media/tech.ce1af5a3233ebf2877d5.jpg",
+    "static/media/3-airpods.jpg": "/static/media/3-airpods.4073803ac23f762621c4.jpg",
+    "static/media/4-watch.jpg": "/static/media/4-watch.cdbb2fd1e8cca2cbc44d.jpg",
+    "static/media/3-headphone.jpg": "/static/media/3-headphone.48afffa98579d6e744ae.jpg",
+    "static/media/1-headphone.jpg": "/static/media/1-headphone.539d8df3a79838b0f0ee.jpg",
+    "static/media/3-watch.jpg": "/static/media/3-watch.ab0382fa40e1859b8d9a.jpg",
+    "static/media/8-watch.jpg": "/static/media/8-watch.2a13a37c6caf984d5869.jpg",
+    "static/media/2-watch.jpg": "/static/media/2-watch.421a4442c3deb2b9e681.jpg",
+    "static/media/1-airpods.jpg": "/static/media/1-airpods.68436ba3d9c3e99c91fc.jpg",
+    "static/media/6-headphone.jpg": "/static/media/6-headphone.a45fed934c1e738daa13.jpg",
+    "static/media/6-watch.jpg": "/static/media/6-watch.c840dda79573dc9b7975.jpg",
+    "static/media/2-headphone.jpg": "/static/media/2-headphone.5aa313f58eeefd65817a.jpg",
+    "static/media/2-airpods.jpg": "/static/media/2-airpods.9e87d913e68e4b3f8c95.jpg",
+    "static/media/5-watch.jpg": "/static/media/5-watch.a11fae1b6beb38f4afbf.jpg",
+    "static/media/4-headphone.jpg": "/static/media/4-headphone.d169e60f789b11848164.jpg",
+    "static/media/4-airpods.jpg": "/static/media/4-airpods.f055680e2083d3b65351.jpg",
+    "static/media/5-headphone.jpg": "/static/media/5-headphone.2cff7641e699dcf3fa4c.jpg",
+    "index.html": "/index.html",
+    "main.b21ea401.css.map": "/static/css/main.b21ea401.css.map",
+    "main.76ff30b0.js.map": "/static/js/main.76ff30b0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b21ea401.css",
+    "static/js/main.76ff30b0.js"
+  ]
+}

@@ -6,6 +6,7 @@ import { fetchAsyncProducts } from "../../redux/Slices/productsSlice";
 import Loader from "react-loaders";
 import { addToCart } from "../../redux/Slices/cartSlice";
 
+
 const Details = () => {
   const { productId } = useParams();
   const products = useSelector((state) => state.products.list);
@@ -22,6 +23,7 @@ const Details = () => {
       indexRef.current.style.zIndex = "-1";
     }, 3500);
   });
+
   return (
     <div className="container details-pg">
       {Object.keys(products).length === 0 ? (
@@ -55,7 +57,12 @@ const Details = () => {
                 dui dignissim tristique nec non est. Pellentesque habitant morbi
                 tristique senectus et netus et malesuada fames ac turpis{" "}
               </p>
-              <button className="add-to-card" onClick={() => dispatch(addToCart(products[productId - 1]))}>Add To Cart</button>
+              <button
+                className="add-to-card"
+                onClick={() => dispatch(addToCart(products[productId - 1]))}
+              >
+                Add To Cart
+              </button>
             </div>
           </div>
         </>
