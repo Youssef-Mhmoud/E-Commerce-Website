@@ -23,7 +23,7 @@ const Products = () => {
             <div className="main-watches">
               {products &&
                 products.map((product) => {
-                  return <Product product={product} />;
+                  return <Product product={product} key={product.id} />;
                 })}
             </div>
           </div>

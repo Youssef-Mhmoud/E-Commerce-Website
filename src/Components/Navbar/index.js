@@ -72,7 +72,7 @@ const Navbar = () => {
             <button
               className="search-btn"
               type="submit"
-              onClick={navigateToContacts}
+              onClick={navigateToContacts} 
             >
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>

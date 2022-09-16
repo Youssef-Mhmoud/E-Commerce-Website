@@ -1,16 +1,15 @@
 .scroll {
   position: fixed;
   bottom: 25px;
-  right: -100px;
+  right: 20px;
   background-color: #ed4e0f;
   padding: 3px 7px;
   border-radius: 4px;
-  opacity: 0;
-  transition: 0.5s;
   z-index: 2000;
   font-size: 20px;
   cursor: pointer;
   color: white;
+  animation: slideInRight .5s forwards;
 
   &::after {
     content: "";
@@ -25,10 +24,6 @@
   }
   &:hover::after {
     width: 100%;
-  }
-  &.show {
-    right: 20px;
-    opacity: 1;
   }
 }
 .home-pg {
