@@ -29,7 +29,7 @@ const Details = () => {
       {Object.keys(products).length === 0 ? (
         <div className="loader-page" ref={indexRef}>
           <h1>
-            <span className="logo-load">SHOPPIng</span>
+            <span className="logo-load">SHOPPING</span>
           </h1>
           <br />
           <Loader type="ball-clip-rotate-multiple" innerClassName="load" />
