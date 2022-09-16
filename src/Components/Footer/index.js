@@ -38,7 +38,7 @@ const Footer = () => {
             <li>Team</li>
           </ul>
         </div>
-        <div className="let-us">
+        <div className="company">
           <h3>Let US HELP YOU</h3>
           <ul>
             <li>Help Center</li>
@@ -49,6 +49,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+      <p className="copy">CopyRights© 2022, ShoPPing</p>
     </footer>
   );
 };

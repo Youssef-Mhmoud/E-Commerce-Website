@@ -27,9 +27,9 @@
       cursor: pointer;
       display: flex;
       align-items: center;
+      gap: 20px;
       justify-content: space-between;
       font-size: 28px;
-      padding: 0 10px;
       svg {
         transition: .5s;
       }
@@ -47,5 +47,38 @@
     }
   }
 
-  
+  .company {
+    padding: 0 15px;
+    h3 {
+      color: white;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        color: white;
+        opacity: .8;
+        transition: .3s;
+        padding: 5px 4px;
+
+        cursor: pointer;
+        &:hover {
+          opacity: 1;
+          padding: 5px 8px;
+        }
+      }
+    }
+  }
+
+  .copy {
+    text-align: center;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(255, 255, 255, 0.201);
+    padding-top: 15px;
+    color: white;
+    letter-spacing: 1.01px;
+  }
 }
