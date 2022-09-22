@@ -2,7 +2,7 @@ $primary-color: #ed4e0f;
 
 @import 'animate.css';
 @import '~loaders.css/src/animations/ball-clip-rotate-multiple.scss';
-
+@import 'bootstrap/dist/css/bootstrap.min.css';
 .loader-active {
   // background-color: black;
   display: block;

@@ -6,6 +6,11 @@ import "./index.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import Row from "react-bootstrap/Row";
 
 const Login = () => {
   const [firstName, setFirstName] = useState("");
@@ -14,47 +19,61 @@ const Login = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(
-      addUser({ firstName, lastName, email, phone, password, confirmPassword })
-    );
+  const dispatch = useDispatch();
+  // Validation Form Bootstrap
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   dispatch(
+  //     addUser({ firstName, lastName, email, phone, password, confirmPassword })
+  //   );
+  // };
+
   // Navigate Home Page
   const navigate = useNavigate();
   const homeNavigate = () => {
-    if (firstName === "") {
-      fnRef.current.classList.add("show");
-    } else {
-      fnRef.current.classList.remove("show");
-    }
-    if (lastName === "") {
-      lnRef.current.classList.add("show");
-    } else {
-      lnRef.current.classList.remove("show");
-    }
-    if (email === "") {
-      emRef.current.classList.add("show");
-    } else {
-      emRef.current.classList.remove("show");
-    }
-    if (phone === "") {
-      phRef.current.classList.add("show");
-    } else {
-      phRef.current.classList.remove("show");
-    }
-    if (password === "") {
-      ps1Ref.current.classList.add("show");
-    } else {
-      ps1Ref.current.classList.remove("show");
-    }
-    if (confirmPassword === "") {
-      ps2Ref.current.classList.add("show");
-    } else {
-      ps2Ref.current.classList.remove("show");
-    }
+    // if (firstName === "") {
+    //   fnRef.current.classList.add("show");
+    // } else {
+    //   fnRef.current.classList.remove("show");
+    // }
+    // if (lastName === "") {
+    //   lnRef.current.classList.add("show");
+    // } else {
+    //   lnRef.current.classList.remove("show");
+    // }
+    // if (email === "") {
+    //   emRef.current.classList.add("show");
+    // } else {
+    //   emRef.current.classList.remove("show");
+    // }
+    // if (phone === "") {
+    //   phRef.current.classList.add("show");
+    // } else {
+    //   phRef.current.classList.remove("show");
+    // }
+    // if (password === "") {
+    //   ps1Ref.current.classList.add("show");
+    // } else {
+    //   ps1Ref.current.classList.remove("show");
+    // }
+    // if (confirmPassword === "") {
+    //   ps2Ref.current.classList.add("show");
+    // } else {
+    //   ps2Ref.current.classList.remove("show");
+    // }
     if (
       (firstName &&
         lastName &&
@@ -71,12 +90,12 @@ const Login = () => {
     }
   };
 
-  const fnRef = useRef();
-  const lnRef = useRef();
-  const emRef = useRef();
-  const phRef = useRef();
-  const ps1Ref = useRef();
-  const ps2Ref = useRef();
+  // const fnRef = useRef();
+  // const lnRef = useRef();
+  // const emRef = useRef();
+  // const phRef = useRef();
+  // const ps1Ref = useRef();
+  // const ps2Ref = useRef();
 
   // Loader
   const indexRef = useRef();
@@ -92,7 +111,7 @@ const Login = () => {
         <Link to="/" className="title-log">
           Shopping
         </Link>
-        <div className="form">
+        {/* <div className="form">
           <form method="get" onSubmit={handleSubmit}>
             <div className="name-input">
               <div className="inputs fname">
@@ -189,7 +208,91 @@ const Login = () => {
               Submit
             </button>
           </form>
-        </div>
+        </div> */}
+        {/* Form Bootstrap */}
+        <Form
+          noValidate
+          validated={validated}
+          onSubmit={handleSubmit}
+          className="justify-content-center form"
+        >
+          <Row className="mb-3 justify-content-center">
+            <Form.Group as={Col} md="4" controlId="validationCustom01" className="mb-4">
+              <Form.Label>First name</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="First name"
+                defaultValue=""
+              />
+              <Form.Control.Feedback>Done!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group as={Col} md="4" controlId="validationCustom02">
+              <Form.Label>Last name</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Last name"
+                defaultValue=""
+              />
+              <Form.Control.Feedback>Done!</Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Row className="mb-4 justify-content-center">
+            <Form as={Col} md="4" className="mb-4">
+              <Form.Group >
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" required placeholder="Email" />
+                <Form.Control.Feedback>Done!</Form.Control.Feedback>
+              </Form.Group>
+            </Form>
+            <Form as={Col} md="4">
+              <Form.Group >
+                <Form.Label>Phone</Form.Label>
+                <Form.Control type="text" required placeholder="Phone" />
+                <Form.Control.Feedback>Done!</Form.Control.Feedback>
+              </Form.Group>
+            </Form>
+          </Row>
+          <Row className="mb-4 justify-content-center">
+            <Form.Group as={Col} md="4" className="mb-4">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                required
+                type="password"
+                placeholder="Password"
+                defaultValue=""
+              />
+              <Form.Control.Feedback>Done!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group as={Col} md="4">
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
+                required
+                type="password"
+                placeholder="Cofirm Password"
+                defaultValue=""
+              />
+              <Form.Control.Feedback>Done!</Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Row className="mb-5">
+            <Form.Group className="mb-4 lef" >
+              <Form.Check
+                required
+                label="Agree to terms and conditions"
+                feedback="You must agree before submitting."
+                feedbackType="invalid"
+                id="validationFormik0"
+                
+              />
+            </Form.Group>
+            <Button type="submit" className="butt m-auto" >
+              Submit form
+            </Button>
+          </Row>
+        </Form>
+        {/* End Bootstrap */}
       </div>
       <div className="loader-page" ref={indexRef}>
         <h1>

@@ -13,14 +13,14 @@
   }
   .form {
     // background-color: #97330b;
-    width: 550px;
+    // width: 550px;
     // box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.2);
     max-width: 100%;
-    min-height: 400px;
-    margin: auto;
+    // min-height: 400px;
+    margin: auto !important;
     // margin-top: 30px;
-    padding: 10px 5px;
-    border-radius: 5px;
+    padding: 20px 15px;
+    // border-radius: 5px;
     form {
       width: 100%;
       margin: 20px auto;
@@ -174,4 +174,10 @@
 
 ::placeholder {
   color: rgba(2, 0, 0, 0.615);
+}
+.butt {
+  width: fit-content;
+}
+.lef {
+  margin-left: -12px;
 }
