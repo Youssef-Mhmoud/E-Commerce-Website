@@ -179,5 +179,10 @@
   width: fit-content;
 }
 .lef {
-  margin-left: -12px;
+  margin-left: 12rem !important;
+  @media(max-width: 768px) {
+    & {
+      margin-left: 0 !important;
+    }
+  }
 }
