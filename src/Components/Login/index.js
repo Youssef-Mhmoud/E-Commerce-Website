@@ -4,99 +4,69 @@ import { addUser } from "../../redux/Slices/userSlice";
 import Loader from "react-loaders";
 import "./index.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import Row from "react-bootstrap/Row";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
+// import Button from "react-bootstrap/Button";
+// import Col from "react-bootstrap/Col";
+// import Form from "react-bootstrap/Form";
+// import InputGroup from "react-bootstrap/InputGroup";
+// import Row from "react-bootstrap/Row";}
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
+import TextField from "./TextField";
 
 const Login = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLasttName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  {
+    // const [firstName, setFirstName] = useState("");
+    // const [lastName, setLastName] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [phone, setPhone] = useState("");
+    // const [password, setPassword] = useState("");
+    // const [confirmPassword, setConfirmPassword] = useState("");
 
-  const dispatch = useDispatch();
-  // Validation Form Bootstrap
-  const [validated, setValidated] = useState(false);
+    const dispatch = useDispatch();
+    // Validation Form Bootstrap
+    // const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    // const handleSubmit = (event) => {
+    //   event.preventDefault();
+    //   dispatch(
+    //     addUser({
+    //       firstName,
+    //       lastName,
+    //       email,
+    //       phone,
+    //       password,
+    //       confirmPassword,
+    //     })
+    //   );
+    //   const form = event.currentTarget;
+    //   if (form.checkValidity() === false) {
+    //     event.stopPropagation();
+    //   }
 
-    setValidated(true);
-  };
+    //   setValidated(true);
+    // };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   dispatch(
-  //     addUser({ firstName, lastName, email, phone, password, confirmPassword })
-  //   );
-  // };
-
-  // Navigate Home Page
-  const navigate = useNavigate();
-  const homeNavigate = () => {
-    // if (firstName === "") {
-    //   fnRef.current.classList.add("show");
-    // } else {
-    //   fnRef.current.classList.remove("show");
-    // }
-    // if (lastName === "") {
-    //   lnRef.current.classList.add("show");
-    // } else {
-    //   lnRef.current.classList.remove("show");
-    // }
-    // if (email === "") {
-    //   emRef.current.classList.add("show");
-    // } else {
-    //   emRef.current.classList.remove("show");
-    // }
-    // if (phone === "") {
-    //   phRef.current.classList.add("show");
-    // } else {
-    //   phRef.current.classList.remove("show");
-    // }
-    // if (password === "") {
-    //   ps1Ref.current.classList.add("show");
-    // } else {
-    //   ps1Ref.current.classList.remove("show");
-    // }
-    // if (confirmPassword === "") {
-    //   ps2Ref.current.classList.add("show");
-    // } else {
-    //   ps2Ref.current.classList.remove("show");
-    // }
-    if (
-      (firstName &&
-        lastName &&
-        email &&
-        phone &&
-        password &&
-        confirmPassword) === ""
-    ) {
-      return "not";
-    } else {
-      setTimeout(() => {
-        navigate("/");
-      }, 1000);
-    }
-  };
-
-  // const fnRef = useRef();
-  // const lnRef = useRef();
-  // const emRef = useRef();
-  // const phRef = useRef();
-  // const ps1Ref = useRef();
-  // const ps2Ref = useRef();
-
+    // // Navigate Home Page
+    // const navigate = useNavigate();
+    // const homeNavigate = () => {
+    //   if (
+    //     (firstName &&
+    //       lastName &&
+    //       email &&
+    //       phone &&
+    //       password &&
+    //       confirmPassword) === ""
+    //   ) {
+    //     return "not";
+    //   } else {
+    //     setTimeout(() => {
+    //       navigate("/");
+    //     }, 1000);
+    //   }
+    // };
+  }
   // Loader
   const indexRef = useRef();
 
@@ -104,6 +74,25 @@ const Login = () => {
     setTimeout(() => {
       indexRef.current.style.zIndex = "-1";
     }, 3500);
+  });
+
+  // Validation Form
+  const validate = Yup.object({
+    firstName: Yup.string()
+      .max(15, "Must be 15 characters or less")
+      .required("Required"),
+    lastName: Yup.string()
+      .max(20, "Must be 20 characters or less")
+      .required("Required"),
+    email: Yup.string()
+      .email('Email is invalid')
+      .required("Email is required"),
+    password: Yup.string()
+      .min(6, "Password must be at least 6 characters")
+      .required("Password is required"),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref('password'),null], 'Password must match')
+      .required("Confirm Password is required"),
   });
   return (
     <>
@@ -210,16 +199,22 @@ const Login = () => {
           </form>
         </div> */}
         {/* Form Bootstrap */}
-        <Form
+        {/* <Form
           noValidate
           validated={validated}
           onSubmit={handleSubmit}
           className="justify-content-center form"
         >
           <Row className="mb-3 justify-content-center">
-            <Form.Group as={Col} md="4" controlId="validationCustom01" className="mb-4">
+            <Form.Group
+              as={Col}
+              md="4"
+              controlId="validationCustom01"
+              className="mb-4"
+            >
               <Form.Label>First name</Form.Label>
               <Form.Control
+                onChange={(e) => setFirstName(e.target.value)}
                 required
                 type="text"
                 placeholder="First name"
@@ -230,6 +225,7 @@ const Login = () => {
             <Form.Group as={Col} md="4" controlId="validationCustom02">
               <Form.Label>Last name</Form.Label>
               <Form.Control
+                onChange={(e) => setLastName(e.target.value)}
                 required
                 type="text"
                 placeholder="Last name"
@@ -240,16 +236,26 @@ const Login = () => {
           </Row>
           <Row className="mb-4 justify-content-center">
             <Form as={Col} md="4" className="mb-4">
-              <Form.Group >
+              <Form.Group>
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" required placeholder="Email" />
+                <Form.Control
+                  type="email"
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email"
+                />
                 <Form.Control.Feedback>Done!</Form.Control.Feedback>
               </Form.Group>
             </Form>
             <Form as={Col} md="4">
-              <Form.Group >
+              <Form.Group>
                 <Form.Label>Phone</Form.Label>
-                <Form.Control type="text" required placeholder="Phone" />
+                <Form.Control
+                  type="text"
+                  required
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Phone"
+                />
                 <Form.Control.Feedback>Done!</Form.Control.Feedback>
               </Form.Group>
             </Form>
@@ -259,6 +265,7 @@ const Login = () => {
               <Form.Label>Password</Form.Label>
               <Form.Control
                 required
+                onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 placeholder="Password"
                 defaultValue=""
@@ -269,6 +276,7 @@ const Login = () => {
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
                 required
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 type="password"
                 placeholder="Cofirm Password"
                 defaultValue=""
@@ -277,22 +285,58 @@ const Login = () => {
             </Form.Group>
           </Row>
           <Row className="mb-5">
-            <Form.Group className="mb-4 lef" >
+            <Form.Group className="mb-4 lef">
               <Form.Check
                 required
                 label="Agree to terms and conditions"
                 feedback="You must agree before submitting."
                 feedbackType="invalid"
                 id="validationFormik0"
-                
               />
             </Form.Group>
-            <Button type="submit" className="butt m-auto" >
+            <Button
+              type="submit"
+              className="butt m-auto"
+              onClick={homeNavigate}
+            >
               Submit form
             </Button>
           </Row>
-        </Form>
+        </Form> */}
         {/* End Bootstrap */}
+        {/* Formik */}
+        <div className="di text-center mt-5">
+          <Formik
+            initialValues={{
+              firstName: "",
+              lastName: "",
+              email: "",
+              password: "",
+              confirmPassword: "",
+            }}
+            validationSchema={validate}
+          >
+            {(formik) => (
+              <div>
+                <h1 className="my-4 font-weight-bold-display-4">Sign Up</h1>
+                <Form>
+                  <TextField label="First Name" name="firstName" type="text" />
+                  <TextField label="Last Name" name="lastName" type="text" />
+                  <TextField label="Email" name="email" type="email" />
+                  <TextField label="Password" name="password" type="password" />
+                  <TextField
+                    label="Confirm Password"
+                    name="confirmPassword"
+                    type="password"
+                  />
+                  <button className="btn btn-dark mt-3" type="submit">
+                    Submit
+                  </button>
+                </Form>
+              </div>
+            )}
+          </Formik>
+        </div>
       </div>
       <div className="loader-page" ref={indexRef}>
         <h1>
