@@ -12,7 +12,7 @@ const TextField = ({label, ...props}) => {
         {...field} {...props}
         autoComplete='off'
       />
-      <ErrorMessage name={field.name}/>
+      <ErrorMessage component="div" name={field.name} className="error"/>
     </div>
   )
 }

@@ -12,5 +12,23 @@
     display: block;
   }
 
-  
+  label {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  input.form-control {
+    width: 500px;
+
+    @media (max-width: 991px) {
+      
+    }
+    &:focus {
+      border-color: #ed4e0f;
+    }
+  }
+  .error {
+    position: absolute;
+    color: red;
+    font-size: .8rem;
+  }
 }

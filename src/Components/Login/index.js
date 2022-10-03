@@ -84,14 +84,15 @@ const Login = () => {
     lastName: Yup.string()
       .max(20, "Must be 20 characters or less")
       .required("Required"),
-    email: Yup.string()
-      .email('Email is invalid')
-      .required("Email is required"),
+    email: Yup.string().email("Email is invalid").required("Email is required"),
+    phone: Yup.string()
+      .email("Phone must be match (e.g, 00333399)")
+      .required("Phone is required"),
     password: Yup.string()
       .min(6, "Password must be at least 6 characters")
       .required("Password is required"),
     confirmPassword: Yup.string()
-      .oneOf([Yup.ref('password'),null], 'Password must match')
+      .oneOf([Yup.ref("password"), null], "Password must match")
       .required("Confirm Password is required"),
   });
   return (
@@ -311,6 +312,7 @@ const Login = () => {
               firstName: "",
               lastName: "",
               email: "",
+              phone: "",
               password: "",
               confirmPassword: "",
             }}
@@ -320,16 +322,31 @@ const Login = () => {
               <div>
                 <h1 className="my-4 font-weight-bold-display-4">Sign Up</h1>
                 <Form>
-                  <TextField label="First Name" name="firstName" type="text" />
-                  <TextField label="Last Name" name="lastName" type="text" />
-                  <TextField label="Email" name="email" type="email" />
-                  <TextField label="Password" name="password" type="password" />
-                  <TextField
-                    label="Confirm Password"
-                    name="confirmPassword"
-                    type="password"
-                  />
-                  <button className="btn btn-dark mt-3" type="submit">
+                  <div className="d-flex align-center justify-content-around">
+                    <TextField
+                      label="First Name"
+                      name="firstName"
+                      type="text"
+                    />
+                    <TextField label="Last Name" name="lastName" type="text" />
+                  </div>
+                  <div className="d-flex align-center justify-content-around mt-5">
+                    <TextField label="Email" name="email" type="email" />
+                    <TextField label="Phone" name="phone" type="text" />
+                  </div>
+                  <div className="d-flex align-center justify-content-around mt-5">
+                    <TextField
+                      label="Password"
+                      name="password"
+                      type="password"
+                    />
+                    <TextField
+                      label="Confirm Password"
+                      name="confirmPassword"
+                      type="password"
+                    />
+                  </div>
+                  <button className="btn btn-dark mt-5 w-25" type="submit">
                     Submit
                   </button>
                 </Form>
