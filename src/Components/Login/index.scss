@@ -18,9 +18,13 @@
   }
   input.form-control {
     width: 500px;
+    max-width: 100%;
 
+    @media (max-width: 1199px) {
+      width: 400px;
+    }
     @media (max-width: 991px) {
-      
+      width: 300px;
     }
     &:focus {
       border-color: #ed4e0f;
@@ -30,5 +34,8 @@
     position: absolute;
     color: red;
     font-size: .8rem;
+    @media(max-width: 768px) {
+      position: relative;
+    }
   }
 }
