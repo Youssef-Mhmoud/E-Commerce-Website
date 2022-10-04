@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser } from "../../redux/Slices/userSlice";
 import Loader from "react-loaders";
@@ -42,9 +42,7 @@ const Login = () => {
         password &&
         confirmPassword) === ""
     ) {
-      console.log('object')
     } else {
-      console.log('2')
       setTimeout(() => {
         navigate("/");
       }, 1000);
@@ -52,12 +50,10 @@ const Login = () => {
   };
   //
   // Loader
-  const indexRef = useRef();
+  const [zIndex, setZIndex] = useState();
 
   useEffect(() => {
-    setTimeout(() => {
-      indexRef.current.style.zIndex = "-1";
-    }, 3500);
+    setTimeout(() =>{ setZIndex({zIndex: '-1'}) }, 3500);
   });
 
   // Validation Form
@@ -149,7 +145,7 @@ const Login = () => {
           </Formik>
         </div>
       </div>
-      <div className="loader-page" ref={indexRef}>
+      <div className="loader-page" style={zIndex}>
         <h1>
           <span className="logo-load">SHOPPIng</span>
         </h1>
