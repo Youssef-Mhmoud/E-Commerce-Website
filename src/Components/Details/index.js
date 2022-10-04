@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { useParams } from "react-router";
 import { fetchAsyncProducts } from "../../redux/Slices/productsSlice";
@@ -16,18 +16,18 @@ const Details = () => {
     dispatch(fetchAsyncProducts(productId));
   }, [dispatch, productId]);
 
-  const indexRef = useRef();
+  const [zIndex, setZIndex] = useState();
 
   useEffect(() => {
     setTimeout(() => {
-      indexRef.current.style.zIndex = "-1";
+      setZIndex({ zIndex: "-1" });
     }, 3500);
   });
 
   return (
     <div className="container details-pg">
       {Object.keys(products).length === 0 ? (
-        <div className="loader-page" ref={indexRef}>
+        <div className="loader-page" style={zIndex}>
           <h1>
             <span className="logo-load">SHOPPING</span>
           </h1>

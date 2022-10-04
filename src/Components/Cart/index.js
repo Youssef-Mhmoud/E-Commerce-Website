@@ -1,13 +1,13 @@
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem/CartItem";
 import Loader from "react-loaders";
 import "./index.scss";
 import { clear, total } from "../../redux/Slices/cartSlice";
-import { useRef } from "react";
+
 
 const Cart = () => {
   // Redux
@@ -17,13 +17,13 @@ const Cart = () => {
     dispatch(total());
   }, [cart, dispatch]);
 
-  const indexRef = useRef()
+  const [zIndex, setZIndex] = useState();
 
   useEffect(() => {
     setTimeout(() => {
-      indexRef.current.style.zIndex = '-1'
-    }, 3500)
-  })
+      setZIndex({ zIndex: "-1" });
+    }, 3500);
+  });
   return (
     <>
       <div className="container main-cart">
@@ -75,7 +75,7 @@ const Cart = () => {
           )}
         </div>
       </div>
-      <div className="loader-page" ref={indexRef}>
+      <div className="loader-page" style={zIndex}>
         <h1>
           <span className="logo-load">SHOPPIng</span>
         </h1>

@@ -15,9 +15,8 @@ import {
   faMicrosoft,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
 import Loader from "react-loaders";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Products from "../Products";
 
 const Home = () => {
@@ -27,25 +26,25 @@ const Home = () => {
   // End Slider UseState
 
   // Slider
-    useEffect(() => {
-      const lastIndex = data.length - 1;
+  useEffect(() => {
+    const lastIndex = data.length - 1;
 
-      if (index < 0) {
-        setIndex(lastIndex);
-      } else if (index > lastIndex) {
-        setIndex(0);
-      }
-    }, [index, data]);
+    if (index < 0) {
+      setIndex(lastIndex);
+    } else if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, data]);
 
-    useEffect(() => {
-      const slider = setTimeout(() => {
-        setIndex((autoIndex) => autoIndex + 1);
-      }, 5000);
-      return () => {
-        clearInterval(slider);
-      };
-    }, [index]);
-  
+  useEffect(() => {
+    const slider = setTimeout(() => {
+      setIndex((autoIndex) => autoIndex + 1);
+    }, 5000);
+    return () => {
+      clearInterval(slider);
+    };
+  }, [index]);
+
   const handleRight = () => {
     setIndex((prevIndex) => prevIndex + 1);
   };
@@ -77,11 +76,11 @@ const Home = () => {
   };
 
   // Loader
-  const indexRef = useRef();
+  const [zIndex, setZIndex] = useState();
 
   useEffect(() => {
     setTimeout(() => {
-      indexRef.current.style.zIndex = "-1";
+      setZIndex({ zIndex: "-1" });
     }, 3500);
   });
   return (
@@ -183,7 +182,7 @@ const Home = () => {
           <Products />
         </div>
       </div>
-      <div className="loader-page" ref={indexRef}>
+      <div className="loader-page" style={zIndex}>
         <h1>
           <span className="logo-load">Shopping</span>
         </h1>
