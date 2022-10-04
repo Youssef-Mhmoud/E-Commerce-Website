@@ -39,12 +39,6 @@ const Navbar = () => {
     navigate("/searchpage");
   };
 
-  // Show User Details
-  const userRef = useRef();
-  const userDetails = () => {
-    userRef.current.classList.toggle("show");
-  };
-
   // Show Form
   const foRef = useRef(null);
   const showForm = () => {
@@ -53,15 +47,68 @@ const Navbar = () => {
   const hidForm = () => {
     foRef.current.classList.remove("show");
   };
+
+  // Info About User
+  const [userInf, setUserInf] = useState(false);
+
+  const userInfo = () => {
+    if (userInf === true) {
+      return (
+        <div className="bg-user-info">
+          <div className="say-hello">
+            <FontAwesomeIcon
+              icon={faXmark}
+              className="x-mark"
+              onClick={() => {
+                setUserInf(false);
+              }}
+            />
+            {firstName === "" ? (
+              <>
+                <p className="don">Don't Signup.. ?</p>
+                <Link to="/login" className="signup-btn">
+                  SignUp
+                </Link>
+              </>
+            ) : (
+              <>
+                <div>
+                  Welcome,{" "}
+                  <span>
+                    {firstName} {lastName}
+                  </span>
+                </div>
+                <br />
+                <div>
+                  <p>
+                    Your Email: <span>{email}</span>
+                  </p>
+                  <p>
+                    Your Phone: <span>{phone}</span>
+                  </p>
+                </div>
+                <button
+                  className="signup-btn logout"
+                  onClick={() => dispatch(logOut())}
+                >
+                  LogOut
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      );
+    }
+  };
   return (
     <header>
+      {userInfo()}
       <div className="container nav-bar">
         <Link to="/" className="logo">
           Shopping
         </Link>
         <div className="form" ref={foRef}>
-          <FontAwesomeIcon icon={faXmark} className="x-hid" onClick={hidForm}/>
-
+          <FontAwesomeIcon icon={faXmark} className="x-hid" onClick={hidForm} />
           <form method="get" onSubmit={submitHandler}>
             <input
               ref={inputRef}
@@ -72,7 +119,7 @@ const Navbar = () => {
             <button
               className="search-btn"
               type="submit"
-              onClick={navigateToContacts} 
+              onClick={navigateToContacts}
             >
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>
@@ -82,38 +129,13 @@ const Navbar = () => {
           <div className="cart mag" to="/cart" onClick={showForm}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </div>
-          <button className="user" onClick={userDetails}>
+          <button
+            className="user"
+            onClick={() => {
+              setUserInf(true);
+            }}
+          >
             <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
-            <div className="say-hello" ref={userRef}>
-              {firstName === "" ? (
-                <>
-                  <p className="don">Don't Signup.. ?</p>
-                  <Link to="/login" className="signup-btn">
-                    SignUp
-                  </Link>
-                </>
-              ) : (
-                <>
-                  <div>
-                    Welcome,{" "}
-                    <span>
-                      {firstName} {lastName}
-                    </span>
-                  </div>
-                  <div>
-                    <p>
-                      Your Email: <span>{email}</span>
-                    </p>
-                    <p>
-                      Your Phone: <span>{phone}</span>
-                    </p>
-                  </div>
-                  <button className="signup-btn logout" onClick={() => dispatch(logOut())}>
-                    LogOut
-                  </button>
-                </>
-              )}
-            </div>
           </button>
           <Link className="cart" to="/cart">
             <FontAwesomeIcon icon={faCartShopping} />

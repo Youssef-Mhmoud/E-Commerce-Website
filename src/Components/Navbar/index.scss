@@ -1,6 +1,81 @@
 header {
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
   background-color: white;
+
+  .bg-user-info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.58);
+    z-index: 3333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .say-hello {
+    opacity: 1;
+    position: fixed;
+    text-align: left;
+    background-color: #d75a11;
+    box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 570px;
+    max-width: 100%;
+    height: 350px;
+    font-size: 18px;
+    z-index: 1;
+    border-radius: 8px;
+    transition: 0.8s;
+    animation: fadeInDown 1s forwards;
+
+    .x-mark {
+      position: absolute;
+      right: 3%;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+
+    span {
+      font-weight: 600;
+      font-size: 25px;
+    }
+    .don {
+      margin-top: 100px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: black;
+    }
+    .signup-btn {
+      background-color: #ffffff;
+      padding: 8px 15px;
+      border-radius: 5px;
+      color: black;
+      text-decoration: none;
+      display: block;
+      width: fit-content;
+      margin: 10px auto;
+      transition: .3s;
+      font-weight: 500;
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+      &.logout {
+        background-color: #00a186;
+        border: 1px solid #00a186;
+        cursor: pointer;
+        color: white;
+        font-size: 18px;
+        margin-top: 30px;
+      }
+    }
+  }
   .nav-bar {
     padding: 15px;
     display: flex;
@@ -52,7 +127,7 @@ header {
       form {
         @media (max-width: 600px) {
           & {
-            width: 80%;
+            width: 90%;
             position: absolute;
             left: 50%;
             top: 50%;
@@ -72,6 +147,11 @@ header {
           font-weight: 600;
           border: 1px solid #e9531791;
           border-right: none;
+          @media (max-width: 600px) {
+            & {
+              padding: 15px;
+            }
+          }
           &:focus {
             outline: none;
           }
@@ -86,7 +166,7 @@ header {
           display: block;
           display: flex;
           align-items: center;
-          padding: 0 15px;
+          padding: 0 20px;
           cursor: pointer;
           font-size: 17px;
         }
@@ -110,56 +190,6 @@ header {
           cursor: pointer;
           color: #e95317;
           font-size: 25px;
-        }
-
-        .say-hello {
-          opacity: 0;
-          position: absolute;
-          text-align: left;
-          background-color: #b04609;
-          box-shadow: 2px 2px 17px rgba(0, 0, 0, 0.3);
-          padding: 20px;
-          right: 50%;
-          top: 40%;
-          width: 370px;
-          max-width: 100%;
-          height: 200px;
-          font-size: 18px;
-          z-index: 1;
-          border-radius: 5px;
-          transition: 0.8s;
-          transform: translate(50%, -50%);
-          &.show {
-            opacity: 1;
-            right: 50%;
-            top: 50%;
-            transform: translate(50%, -50%);
-          }
-          span {
-            font-weight: 600;
-          }
-          .don {
-            margin-top: 30px;
-            text-align: center;
-          }
-          .signup-btn {
-            background-color: #ffffff;
-            padding: 8px 15px;
-            border-radius: 5px;
-            color: black;
-            text-decoration: none;
-            display: block;
-            width: fit-content;
-            margin: 10px auto;
-            &.logout {
-              background-color: #00a186;
-              border: 1px solid #00a186;
-              cursor: pointer;
-              color: white;
-              font-size: 18px;
-              margin-top: 30px;
-            }
-          }
         }
       }
 
