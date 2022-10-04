@@ -4,14 +4,7 @@ import { addUser } from "../../redux/Slices/userSlice";
 import Loader from "react-loaders";
 import "./index.scss";
 import { Link, useNavigate } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
-// import Button from "react-bootstrap/Button";
-// import Col from "react-bootstrap/Col";
-// import Form from "react-bootstrap/Form";
-// import InputGroup from "react-bootstrap/InputGroup";
-// import Row from "react-bootstrap/Row";}
-import { Formik, Form, Field } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import TextField from "./TextField";
 
@@ -114,9 +107,6 @@ const Login = () => {
                   setPassword(formik.values.password),
                   setConfirmPassword(formik.values.confirmPassword)
                 ]}
-                {
-                  // formik.isValidating ? setTimeout(() => { navigate("/cart")}, 1000)  : false
-                }
                 <h1 className="my-4 font-weight-bold-display-4">Sign Up</h1>
                 <Form>
                   <div className="d-flex align-center justify-content-around flex-column flex-md-row">
@@ -149,7 +139,6 @@ const Login = () => {
                     onClick={() => {
                       handleSubmit();
                       homeNavigate();
-
                     }}
                   >
                     Submit
