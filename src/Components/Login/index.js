@@ -15,7 +15,6 @@ const Login = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
@@ -35,12 +34,9 @@ const Login = () => {
   const navigate = useNavigate();
   const homeNavigate = () => {
     if (
-      (firstName &&
-        lastName &&
-        email &&
-        phone &&
-        password &&
-        confirmPassword) === ""
+      (firstName && lastName && email && phone) === "" &&
+      password.length < 6 &&
+      confirmPassword.length < 6
     ) {
     } else {
       setTimeout(() => {
@@ -53,7 +49,9 @@ const Login = () => {
   const [zIndex, setZIndex] = useState();
 
   useEffect(() => {
-    setTimeout(() =>{ setZIndex({zIndex: '-1'}) }, 3500);
+    setTimeout(() => {
+      setZIndex({ zIndex: "-1" });
+    }, 3500);
   });
 
   // Validation Form
@@ -101,7 +99,7 @@ const Login = () => {
                   setEmail(formik.values.email),
                   setPhone(formik.values.phone),
                   setPassword(formik.values.password),
-                  setConfirmPassword(formik.values.confirmPassword)
+                  setConfirmPassword(formik.values.confirmPassword),
                 ]}
                 <h1 className="my-4 font-weight-bold-display-4">Sign Up</h1>
                 <Form>

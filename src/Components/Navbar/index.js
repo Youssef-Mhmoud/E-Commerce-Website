@@ -89,7 +89,10 @@ const Navbar = () => {
                 </div>
                 <button
                   className="signup-btn logout"
-                  onClick={() => dispatch(logOut())}
+                  onClick={() => {
+                    dispatch(logOut());
+                    setUserInf(false);
+                  }}
                 >
                   LogOut
                 </button>

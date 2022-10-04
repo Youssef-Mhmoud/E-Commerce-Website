@@ -30,14 +30,14 @@
     &::before {
       content: "";
       position: absolute;
-      top: 53.4px;
+      top: 55.4px;
       z-index: 1;
       left: 50%;
       transform: translateX(-50%) rotate(45deg);
       background-color: white;
       border: 3px solid #ed4e0f;
-      width: 10px;
-      height: 10px;
+      width: 13px;
+      height: 13px;
     }
   }
   .main-watches {
