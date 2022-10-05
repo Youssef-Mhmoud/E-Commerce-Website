@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/Slices/cartSlice";
 import { Link } from "react-router-dom";
@@ -8,23 +8,31 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
-  const shRef = useRef(null)
+
+  const [zoomImg, setZoomImg] = useState(true);
+
   const showImg = () => {
-    shRef.current.classList.add('show')
-  }
-  const hiddImg = () => {
-    shRef.current.classList.remove('show')
-  }
+    if (zoomImg) {
+      return (
+        <div className="zoom-img">
+          <div className="img-box">
+            <img src={product.img} alt="img" />
+            <FontAwesomeIcon
+              icon={faXmark}
+              className="x-mark"
+              onClick={() => setZoomImg(false)}
+            />
+          </div>
+        </div>
+      );
+    }
+  };
+
   return (
     <>
-      <div className="zoom-img" ref={shRef}>
-        <div className="img-box">
-          <img src={product.img} />
-          <FontAwesomeIcon icon={faXmark} className="x-mark" onClick={hiddImg} />
-        </div>
-      </div>
+      {showImg()}
       <div className="watch-box">
-        <img src={product.img} onClick={showImg} />
+        <img src={product.img} onClick={() => setZoomImg(true)} alt="img" />
         <div className="info-watch">
           <h4 className="title-watch">{product.title}</h4>
           <p className="price">${product.price}</p>

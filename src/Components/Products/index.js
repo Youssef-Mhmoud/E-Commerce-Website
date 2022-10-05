@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import Product from "./Product";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncProducts } from "../../redux/Slices/productsSlice";
+
 
 const Products = () => {
   // Redux
@@ -11,6 +12,8 @@ const Products = () => {
   useEffect(() => {
     dispatch(fetchAsyncProducts());
   }, []);
+
+
 
   return (
     <div className="container products-pg">

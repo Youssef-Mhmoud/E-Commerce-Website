@@ -63,7 +63,9 @@ const Login = () => {
       .max(20, "Must be 20 characters or less")
       .required("Required"),
     email: Yup.string().email("Email is invalid").required("Email is required"),
-    phone: Yup.string().required("Phone is required"),
+    phone: Yup.string()
+      .min(9, "Enter your phone correctly")
+      .required("Phone is required"),
     password: Yup.string()
       .min(6, "Password must be at least 6 characters")
       .required("Password is required"),

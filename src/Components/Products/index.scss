@@ -48,7 +48,7 @@
     margin-bottom: 15px;
   }
   .zoom-img { 
-    display: none;
+    display: block;
     position: fixed;
     z-index: 10000;
     left: 0;
@@ -57,9 +57,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
 
-    &.show {
-      display: block;
-    }
+
     .img-box {
       position: relative;
       left: 50%;
