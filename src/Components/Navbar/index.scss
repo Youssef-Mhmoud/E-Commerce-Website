@@ -14,7 +14,7 @@ header {
     justify-content: center;
     align-items: center;
   }
-  .say-hello {
+  .say-hello, .hidden-say {
     opacity: 1;
     position: fixed;
     text-align: left;
@@ -29,6 +29,10 @@ header {
     border-radius: 8px;
     transition: 0.8s;
     animation: fadeInDown 1s forwards;
+    
+    &.hidden-say {
+      animation: fadeOutUp 1s forwards;
+    }
 
     .x-mark {
       position: absolute;
@@ -77,6 +81,7 @@ header {
       }
     }
   }
+
   .nav-bar {
     padding: 15px;
     display: flex;

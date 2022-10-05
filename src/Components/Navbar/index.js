@@ -50,17 +50,21 @@ const Navbar = () => {
 
   // Info About User
   const [userInf, setUserInf] = useState(false);
+  const [userdet, setUserDet] = useState();
 
   const userInfo = () => {
     if (userInf === true) {
       return (
         <div className="bg-user-info">
-          <div className="say-hello">
+          <div className={`${userdet}`}>
             <FontAwesomeIcon
               icon={faXmark}
               className="x-mark"
               onClick={() => {
-                setUserInf(false);
+                setUserDet("hidden-say");
+                setTimeout(() => {
+                  setUserInf(false);
+                }, 300);
               }}
             />
             {firstName === "" ? (
@@ -103,6 +107,7 @@ const Navbar = () => {
       );
     }
   };
+
   return (
     <header>
       {userInfo()}
@@ -136,6 +141,7 @@ const Navbar = () => {
             className="user"
             onClick={() => {
               setUserInf(true);
+              setUserDet('say-hello')
             }}
           >
             <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
