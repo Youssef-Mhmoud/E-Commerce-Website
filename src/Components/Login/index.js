@@ -34,9 +34,13 @@ const Login = () => {
   const navigate = useNavigate();
   const homeNavigate = () => {
     if (
-      (firstName && lastName && email && phone) === "" &&
-      password.length < 6 &&
-      confirmPassword.length < 6
+      firstName === "" ||
+      lastName === "" ||
+      email === "" ||
+      phone === "" ||
+      password.length < 6 ||
+      confirmPassword.length < 6 ||
+      password !== confirmPassword
     ) {
     } else {
       setTimeout(() => {
