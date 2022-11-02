@@ -2,7 +2,7 @@
   height: calc(100vh - 176px);
   @media (max-width: 991px) {
     & {
-      height: 75vh;
+      height: 80vh;
     }
   }
   .detail-card {
@@ -63,6 +63,27 @@
       color: white;
       border-radius: 10px 0 10px 0;
       margin-left: 20px;
+    }
+
+    .stars-feed {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      font-size: 20px;
+
+      span {
+        font-size: 26px;
+        font-weight: bold;
+      }
+      .empty-stars {
+          path {
+            fill: transparent;
+            stroke-width: 40;
+            stroke: #ffa534;
+            stroke-dasharray: 2100;
+            stroke-dashoffset: 0;
+          }
+      }
     }
 
     .detail-more {

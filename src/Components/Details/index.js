@@ -5,7 +5,8 @@ import { useParams } from "react-router";
 import { fetchAsyncProducts } from "../../redux/Slices/productsSlice";
 import Loader from "react-loaders";
 import { addToCart } from "../../redux/Slices/cartSlice";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Details = () => {
   const { productId } = useParams();
@@ -23,7 +24,7 @@ const Details = () => {
       setZIndex({ zIndex: "-1" });
     }, 3500);
   });
-
+  const actStars = 5;
   return (
     <div className="container details-pg">
       {Object.keys(products).length === 0 ? (
@@ -37,7 +38,7 @@ const Details = () => {
       ) : (
         <>
           <div className="detail-card">
-            <img className="imgone" src={products[productId - 1].img} />
+            <img className="imgone" src={products[productId - 1].img} alt="" />
             <div className="detail-info">
               <h2 className="detail-title">
                 Name: {products[productId - 1].title}
@@ -48,6 +49,16 @@ const Details = () => {
                   {" "}
                   ${products[productId - 1].price}
                 </p>
+              </div>
+              <div className="stars-feed">
+                <span>Review: </span>
+                {[...new Array(actStars)].map((arr, index) => {
+                  return index < products[productId - 1].stars ? (
+                    <FontAwesomeIcon icon={faStar} color="#ffa534" />
+                  ) : (
+                    <FontAwesomeIcon icon={faStar} className="empty-stars" />
+                  );
+                })}
               </div>
               <p className="detail-more">
                 <span>Details: </span>
