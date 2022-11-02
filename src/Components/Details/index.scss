@@ -1,36 +1,45 @@
 .details-pg {
   height: calc(100vh - 176px);
-  @media(max-width: 991px) {
+  @media (max-width: 991px) {
     & {
-      height: 120vh;
+      height: 75vh;
     }
   }
   .detail-card {
     margin-top: 50px;
-    display: flex;
+    // display: flex;
     height: 400px;
     margin-bottom: 10px;
-    @media(max-width: 991px) {
-      & {
-        flex-direction: column;
-      }
-    }
+    // @media(max-width: 991px) {
+    //   & {
+    //     flex-direction: column;
+    //   }
+    // }
   }
-  .imgone{
-    width: 550px;
+  .imgone {
+    display: block;
+    width: 800px;
     max-width: 100%;
     max-height: 100%;
     border-radius: 5px;
-    @media(max-width: 991px) {
+    margin: 30px auto;
+    @media (max-width: 991px) {
       & {
+        margin: 1px auto;
         width: 100%;
+      }
+    }
+    @media (max-width: 768px) {
+      & {
+        margin: 10px auto;
       }
     }
   }
   .detail-info {
+    max-width: 800px;
     display: flex;
     flex-direction: column;
-    margin-left: 25px;
+    margin: auto;
     justify-content: space-between;
 
     .detail-title {
@@ -58,7 +67,7 @@
 
     .detail-more {
       font-size: 15px;
-      opacity: .9;
+      opacity: 0.9;
       line-height: 1.7;
       span {
         font-size: 26px;
@@ -66,24 +75,24 @@
       }
     }
 
-    .add-to-card { 
-        display: block;
-        width: fit-content;
-        margin: 5px 0;
-        border: 2px solid #ed4e0f;
-        background-color: transparent;
-        padding: 8px 30px;
-        border-radius: 5px;
-        font-size: 18px;
-        font-weight: normal;
-        cursor: pointer;
-        transition: 0.5s;
-        background-color: #ed4e0f;
-        color: white;
+    .add-to-card {
+      display: block;
+      width: fit-content;
+      margin: 5px 0;
+      border: 2px solid #ed4e0f;
+      background-color: transparent;
+      padding: 8px 30px;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: normal;
+      cursor: pointer;
+      transition: 0.5s;
+      background-color: #ed4e0f;
+      color: white;
 
-        &:hover {
-          opacity: .8;
-        }
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }
