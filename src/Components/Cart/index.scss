@@ -24,12 +24,23 @@
   }
 
   .start-shopping {
+    .cartSvg {
+      display: block;
+      margin: 10px auto;
+      width: 120px;
+      height: 120px;
+      
+    }
     a {
       text-decoration: none;
-      color: black;
-      font-size: 18px;
+      color:#e95317;
+      font-size: 20px;
       span {
         margin-left: 10px;
+        transition: .4s;
+        &:hover {
+          margin-left: 20px;
+        }
       }
     }
   }

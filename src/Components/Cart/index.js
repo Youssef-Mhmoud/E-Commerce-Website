@@ -35,7 +35,7 @@ const Cart = () => {
             <div className="cart-empty">
               <p>Your Cart Is Currently Empty</p>
               <div className="start-shopping">
-                <img src={svgCart} alt="img"/>
+                <img src={svgCart} alt="img" className="cartSvg"/>
                 <Link to="/">
                   <FontAwesomeIcon icon={faArrowLeft} />
                   <span>Start Shopping</span>
