@@ -1,5 +1,15 @@
 .main-cart {
   min-height: calc(100vh - 126px);
+  .bgSvg {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
 }
 .cart-empty {
   text-align: center;

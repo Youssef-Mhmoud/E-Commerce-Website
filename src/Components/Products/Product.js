@@ -4,7 +4,7 @@ import { addToCart } from "../../redux/Slices/cartSlice";
 import { Link } from "react-router-dom";
 import { addToDetails } from "../../redux/Slices/detailsSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faStar, faFish } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
@@ -28,6 +28,7 @@ const Product = ({ product }) => {
     // }
   };
   const actStars = 5;
+
   return (
     <>
       {showImg()}
@@ -46,7 +47,7 @@ const Product = ({ product }) => {
             return index < product.stars ? (
               <FontAwesomeIcon icon={faStar} color="#ffa534" />
             ) : (
-              <FontAwesomeIcon icon={faStar} className="empty-stars"/>
+              <FontAwesomeIcon icon={faStar} className="empty-stars" />
             );
           })}
         </div>
