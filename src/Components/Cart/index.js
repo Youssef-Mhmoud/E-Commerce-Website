@@ -7,8 +7,8 @@ import CartItem from "./CartItem/CartItem";
 import Loader from "react-loaders";
 import "./index.scss";
 import { clear, total } from "../../redux/Slices/cartSlice";
-import svgImgBg from '../../assests/imgs/bg-2.svg'
-import svgCart from '../../assests/imgs/Empty.svg'
+import svgImgBg from "../../assests/imgs/bg-2.svg";
+import svgCart from "../../assests/imgs/Empty.svg";
 
 const Cart = () => {
   // Redux
@@ -28,14 +28,16 @@ const Cart = () => {
   return (
     <>
       <div className="container main-cart">
-          <div style={{backgroundImage: `url(${svgImgBg})`}} className="bgSvg" >
-          </div>
+        <div
+          style={{ backgroundImage: `url(${svgImgBg})` }}
+          className="bgSvg"
+        ></div>
         <div>
           {cart.cartItem.length === 0 ? (
             <div className="cart-empty">
               <p>Your Cart Is Currently Empty</p>
               <div className="start-shopping">
-                <img src={svgCart} alt="img" className="cartSvg"/>
+                <img src={svgCart} alt="img" className="cartSvg" />
                 <Link to="/">
                   <FontAwesomeIcon icon={faArrowLeft} />
                   <span>Start Shopping</span>

@@ -1,10 +1,12 @@
 .main-cart {
   min-height: calc(100vh - 126px);
+
   .bgSvg {
+    filter: blur(8px);
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 900px;
+    height: 100%;
     width: 100%;
     z-index: -1;
     top: 0;
@@ -29,15 +31,14 @@
       margin: 10px auto;
       width: 120px;
       height: 120px;
-      
     }
     a {
       text-decoration: none;
-      color:#e95317;
+      color: #e95317;
       font-size: 20px;
       span {
         margin-left: 10px;
-        transition: .4s;
+        transition: 0.4s;
         &:hover {
           margin-left: 20px;
         }
@@ -51,11 +52,10 @@
   align-items: center;
   grid-template-columns: 3fr 1fr 1fr 1fr;
   gap: 0.5rem;
-  @media(max-width: 600px) {
-    & {
-      
-    }
-  }
+  // @media (max-width: 600px) {
+    // & {
+  //   }
+  // }
 
   h3 {
     font-size: 14px;
@@ -81,7 +81,7 @@
   align-items: flex-start;
   padding-top: 1.5rem;
 
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     & {
       flex-direction: column;
       text-align: center;
@@ -98,13 +98,24 @@
     border: 0.5px solid rgb(177, 177, 177);
     cursor: pointer;
     outline: none;
+    transition: 0.4s;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
   }
 
   .cart-checkout {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     width: 270px;
     max-width: 100%;
     margin-bottom: 60px;
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
       & {
         margin: 80px auto;
       }
