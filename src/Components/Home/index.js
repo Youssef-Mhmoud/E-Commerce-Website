@@ -103,6 +103,9 @@ const Home = () => {
                   <Link to="/cart">Cart</Link>
                 </li>
                 <li>
+                  <Link to="/cart">Blog</Link>
+                </li>
+                <li>
                   {firstName === "" ? (
                     <Link to="/login" className="sign-btn">
                       SignUp
@@ -155,7 +158,6 @@ const Home = () => {
               icon={faAngleRight}
             />
           </div>
-        </div>
         <div className="line-ads">
           <div className="box">
             <FontAwesomeIcon icon={faApple} className="brand" />
@@ -177,6 +179,7 @@ const Home = () => {
             <FontAwesomeIcon icon={faBehance} className="brand" />
             <h4>Behance</h4>
           </div>
+        </div>
         </div>
         <div div className="main-watches">
           <Products />
