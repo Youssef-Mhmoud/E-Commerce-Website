@@ -28,10 +28,10 @@ const Cart = () => {
   return (
     <>
       <div className="container main-cart">
-        <div
+        {/* <div
           style={{ backgroundImage: `url(${svgImgBg})` }}
           className="bgSvg"
-        ></div>
+        ></div> */}
         <div>
           {cart.cartItem.length === 0 ? (
             <div className="cart-empty">
