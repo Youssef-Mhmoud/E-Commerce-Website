@@ -1,8 +1,8 @@
 $primary-color: #ed4e0f;
 
-@import 'animate.css';
-@import '~loaders.css/src/animations/ball-clip-rotate-multiple.scss';
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "animate.css";
+@import "~loaders.css/src/animations/ball-clip-rotate-multiple.scss";
+@import "bootstrap/dist/css/bootstrap.min.css";
 .loader-active {
   // background-color: black;
   display: block;
@@ -71,5 +71,47 @@ $primary-color: #ed4e0f;
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+}
+
+// Dark mode
+.dark {
+  background-color: #222;
+
+  header {
+    background-color: #222;
+    transition: 0.3s;
+  }
+
+  .home-pg .landing .side-bar.side1 .list-side li a {
+    color: #fff !important;
+
+    &.sign-btn {
+      color: #ed4e0f !important;
+    }
+  }
+
+  .line-ads h4 {
+    color: #ed4e0f;
+  }
+
+  h2,
+  p,
+  h4,
+  span {
+    color: white;
+  }
+
+  .footer {
+    border-top: 1px solid rgb(68, 66, 66);
+  }
+
+  .login-pg  {
+    color: #fff !important;
+
+    .btn {
+      background-color: #ed4e0f;
+      font-weight: 500;
+    }
   }
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faAngleRight,
   faCartShopping,
   faCircleUser,
   faMagnifyingGlass,
@@ -64,7 +65,7 @@ const Navbar = () => {
                 setUserDet("hidden-say");
                 setTimeout(() => {
                   setUserInf(false);
-                }, 300);
+                }, 600);
               }}
             />
             {firstName === "" ? (
@@ -108,6 +109,13 @@ const Navbar = () => {
     }
   };
 
+  // Night Mode
+  const nightMode = () => {
+    const body = document.body;
+
+    body.classList.toggle('dark')
+  }
+
   return (
     <header>
       {userInfo()}
@@ -146,6 +154,21 @@ const Navbar = () => {
           >
             <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
           </button>
+{/*               Night Mode               */}
+{
+  
+}
+          <button
+            className="user"
+            onClick={() => {
+              // setUserInf(true);
+              // setUserDet('say-hello')
+              nightMode()
+            }}
+            >
+            <FontAwesomeIcon icon={faAngleRight} className="user-icon" />
+          </button>
+{/*               Night Mode               */}
           <Link className="cart" to="/cart">
             <FontAwesomeIcon icon={faCartShopping} />
             <span className="count-cart">{cart.cartTotalQuantity}</span>

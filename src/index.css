@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition: .3s;
   -moz-osx-font-smoothing: grayscale;
 }
 
