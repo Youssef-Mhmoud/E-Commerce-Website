@@ -89,7 +89,7 @@
           list-style: none;
           display: flex;
           flex-direction: column;
-          gap: 26px;
+          gap: 16px;
           li {
             // padding: 10px;
 
@@ -121,6 +121,9 @@
       }
       
       &.side2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         @media(max-width: 1199px) {
           & {
             width: 47%;
@@ -232,6 +235,7 @@
 
   .name-co {
     color: #ed4e0f;
+    font-size: 24px;
   }
 
   .line-ads {

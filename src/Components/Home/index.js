@@ -123,6 +123,7 @@ const Home = () => {
               <p className="info-about">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Vestibulum molestie vulputate mollis. Ut maximus tortorUt ma
+                Lorem bulum molestie vulputate
               </p>
               <Link to="/" className="about-btn">
                 More Details
