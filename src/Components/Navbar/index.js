@@ -2,10 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAngleRight,
   faCartShopping,
   faCircleUser,
   faMagnifyingGlass,
+  faMoon,
+  faSun,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
@@ -110,9 +111,10 @@ const Navbar = () => {
   };
 
   // Night Mode
+  const [changeMoon, setChangeMoon] = useState(false);
   const nightMode = () => {
     const body = document.body;
-
+    setChangeMoon(change => !change)
     body.classList.toggle('dark')
   }
 
@@ -155,18 +157,15 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
           </button>
 {/*               Night Mode               */}
-{
-  
-}
           <button
-            className="user"
+            className="user night-btn"
             onClick={() => {
               // setUserInf(true);
               // setUserDet('say-hello')
               nightMode()
             }}
             >
-            <FontAwesomeIcon icon={faAngleRight} className="user-icon" />
+            <FontAwesomeIcon icon={changeMoon ?   faSun : faMoon } className="user-icon" />
           </button>
 {/*               Night Mode               */}
           <Link className="cart" to="/cart">
