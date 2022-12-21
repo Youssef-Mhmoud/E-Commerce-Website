@@ -114,4 +114,33 @@ $primary-color: #ed4e0f;
       font-weight: 500;
     }
   }
+
+  .main-cart {
+    color: #fff;
+
+    .remove-item {
+      color: white;
+      border-color: #fff;
+
+      &:hover {
+        background-color: #666;
+        border-color: #666;
+      }
+    }
+    .clear:hover {
+        background-color: #666;
+        border-color: #666;
+      }
+  }
+
+  .continue-shopping svg {
+    color: #fff;
+  }
+
+  .start-shopping  img{
+    // box-shadow: 3px 3px 30px 30px black;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 8px;
+  }
 }
