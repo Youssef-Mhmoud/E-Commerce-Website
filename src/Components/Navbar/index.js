@@ -114,9 +114,9 @@ const Navbar = () => {
   const [changeMoon, setChangeMoon] = useState(false);
   const nightMode = () => {
     const body = document.body;
-    setChangeMoon(change => !change)
-    body.classList.toggle('dark')
-  }
+    setChangeMoon((change) => !change);
+    body.classList.toggle("dark");
+  };
 
   return (
     <header>
@@ -151,23 +151,27 @@ const Navbar = () => {
             className="user"
             onClick={() => {
               setUserInf(true);
-              setUserDet('say-hello')
+              setUserDet("say-hello");
             }}
           >
             <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
           </button>
-{/*               Night Mode               */}
+          {/*               Night Mode               */}
           <button
             className="user night-btn"
             onClick={() => {
               // setUserInf(true);
               // setUserDet('say-hello')
-              nightMode()
+              nightMode();
             }}
-            >
-            <FontAwesomeIcon icon={changeMoon ?   faSun : faMoon } className="user-icon" />
+          >
+            <FontAwesomeIcon
+              icon={changeMoon ? faSun : faMoon}
+              className="user-icon"
+              style={{color: changeMoon ? "#fff" : "#222"}}
+            />
           </button>
-{/*               Night Mode               */}
+          {/*               Night Mode               */}
           <Link className="cart" to="/cart">
             <FontAwesomeIcon icon={faCartShopping} />
             <span className="count-cart">{cart.cartTotalQuantity}</span>

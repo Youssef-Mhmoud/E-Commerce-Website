@@ -14,7 +14,8 @@ header {
     justify-content: center;
     align-items: center;
   }
-  .say-hello, .hidden-say {
+  .say-hello,
+  .hidden-say {
     opacity: 1;
     position: fixed;
     text-align: left;
@@ -29,7 +30,7 @@ header {
     border-radius: 8px;
     transition: 0.8s;
     animation: fadeInDown 1s forwards;
-    
+
     &.hidden-say {
       animation: fadeOutUp 1s forwards;
     }
@@ -42,7 +43,6 @@ header {
       font-weight: bold;
       cursor: pointer;
     }
-
 
     span {
       color: white;
@@ -65,7 +65,7 @@ header {
       display: block;
       width: fit-content;
       margin: 10px auto;
-      transition: .3s;
+      transition: 0.3s;
       font-weight: 500;
       &:hover {
         color: white;
@@ -111,10 +111,10 @@ header {
       }
       &.show {
         display: block;
-        .x-hid  {
+        .x-hid {
           display: block;
         }
-        
+
         @media (max-width: 768px) {
           & {
             z-index: 100000;
