@@ -148,4 +148,13 @@ $primary-color: #ed4e0f;
     border-radius: 12px;
     padding: 8px;
   }
+
+  .night-btn {
+    border: 1px solid #f1f3f5 !important;
+
+    .btn-circle {
+      background-color: #f1f3f5 !important;
+      left: 59% !important;
+    }
+  }
 }

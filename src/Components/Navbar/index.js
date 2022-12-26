@@ -147,6 +147,16 @@ const Navbar = () => {
           <div className="cart mag" to="/cart" onClick={showForm}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </div>
+          {/*               Night Mode               */}
+          <button
+            className="user night-btn"
+            onClick={() => {
+              nightMode();
+            }}
+          >
+            <div className="btn-circle"></div>
+          </button>
+          {/*               Night Mode               */}
           <button
             className="user"
             onClick={() => {
@@ -156,22 +166,6 @@ const Navbar = () => {
           >
             <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
           </button>
-          {/*               Night Mode               */}
-          <button
-            className="user night-btn"
-            onClick={() => {
-              // setUserInf(true);
-              // setUserDet('say-hello')
-              nightMode();
-            }}
-          >
-            <FontAwesomeIcon
-              icon={changeMoon ? faSun : faMoon}
-              className="user-icon"
-              style={{color: changeMoon ? "#fff" : "#222"}}
-            />
-          </button>
-          {/*               Night Mode               */}
           <Link className="cart" to="/cart">
             <FontAwesomeIcon icon={faCartShopping} />
             <span className="count-cart">{cart.cartTotalQuantity}</span>
