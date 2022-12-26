@@ -154,6 +154,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-top: 18px;
 
       .details {
         display: block;
@@ -164,7 +165,7 @@
         padding: 6px 8px;
         border-radius: 5px;
         font-size: 18px;
-        font-weight: normal;
+        font-weight: 500;
         cursor: pointer;
         transition: 0.5s;
         background-color: #00a186;
@@ -184,7 +185,7 @@
       padding: 6px 8px;
       border-radius: 5px;
       font-size: 18px;
-      font-weight: normal;
+      font-weight: 500;
       cursor: pointer;
       transition: 0.5s;
       background-color: #ed4e0f;
