@@ -5,8 +5,6 @@ import {
   faCartShopping,
   faCircleUser,
   faMagnifyingGlass,
-  faMoon,
-  faSun,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
