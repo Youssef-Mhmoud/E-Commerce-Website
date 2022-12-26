@@ -5,6 +5,10 @@
       height: 80vh;
     }
   }
+
+  @media (max-width: 550px) {
+    margin-bottom: 150px;
+  }
   .detail-card {
     margin-top: 50px;
     // display: flex;
@@ -76,13 +80,13 @@
         font-weight: bold;
       }
       .empty-stars {
-          path {
-            fill: transparent;
-            stroke-width: 40;
-            stroke: #ffa534;
-            stroke-dasharray: 2100;
-            stroke-dashoffset: 0;
-          }
+        path {
+          fill: transparent;
+          stroke-width: 40;
+          stroke: #ffa534;
+          stroke-dasharray: 2100;
+          stroke-dashoffset: 0;
+        }
       }
     }
 
@@ -105,7 +109,7 @@
       padding: 8px 30px;
       border-radius: 5px;
       font-size: 18px;
-      font-weight: normal;
+      font-weight: 500;
       cursor: pointer;
       transition: 0.5s;
       background-color: #ed4e0f;
