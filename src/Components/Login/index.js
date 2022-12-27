@@ -109,7 +109,7 @@ const Login = () => {
                 ]}
                 <h1 className="my-4 font-weight-bold-display-4">Sign Up</h1>
                 <Form>
-                  <div className="d-flex align-center justify-content-around flex-column flex-md-row gap-4 gap-md-0">
+                  <div className="d-flex  justify-content-around flex-column flex-md-row gap-4 gap-md-0">
                     <TextField
                       label="First Name"
                       name="firstName"
@@ -117,11 +117,11 @@ const Login = () => {
                     />
                     <TextField label="Last Name" name="lastName" type="text" />
                   </div>
-                  <div className="d-flex align-center justify-content-around mt-4  mt-md-5 flex-column flex-md-row gap-4 gap-md-0">
+                  <div className="d-flex  justify-content-around mt-4  mt-md-5 flex-column flex-md-row gap-4 gap-md-0">
                     <TextField label="Email" name="email" type="text" />
                     <TextField label="Phone" name="phone" type="text" />
                   </div>
-                  <div className="d-flex align-center justify-content-around mt-4  mt-md-5 flex-column flex-md-row gap-4 gap-md-0">
+                  <div className="d-flex  justify-content-around mt-4  mt-md-5 flex-column flex-md-row gap-4 gap-md-0">
                     <TextField
                       label="Password"
                       name="password"

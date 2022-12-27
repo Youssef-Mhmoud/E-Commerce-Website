@@ -71,18 +71,19 @@ const Navbar = () => {
               <>
                 <p className="don">Don't Signup.. ?</p>
                 <Link to="/login" className="signup-btn">
-                  SignUp
+                  Sign Up
                 </Link>
               </>
             ) : (
               <>
                 <div>
-                  Welcome,{" "}
-                  <span>
-                    {firstName} {lastName}
-                  </span>
+                  <p>
+                    Welcome,{" "}
+                    <span>
+                      {firstName} {lastName}
+                    </span>
+                  </p>
                 </div>
-                <br />
                 <div>
                   <p>
                     Your Email: <span>{email}</span>
@@ -98,7 +99,7 @@ const Navbar = () => {
                     setUserInf(false);
                   }}
                 >
-                  LogOut
+                  Log Out
                 </button>
               </>
             )}

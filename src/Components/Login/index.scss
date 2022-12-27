@@ -15,7 +15,7 @@
   .form {
     margin-top: 150px;
 
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
       margin-top: 32px;
     }
   }
@@ -23,6 +23,8 @@
   label {
     font-size: 1.2rem;
     font-weight: 600;
+    margin-bottom: 2px;
+    text-align: left;
   }
   input.form-control {
     width: 500px;
@@ -36,20 +38,28 @@
     }
     &:focus {
       border-color: #ed4e0f;
+      box-shadow: 0px 0px 0px 5px rgba(255, 107, 107, 0.5) !important;
     }
   }
   .error {
-    position: absolute;
-    color: red;
-    font-size: .8rem;
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
       position: relative;
     }
+    position: absolute;
+    color: #c92a2a;
+    margin-top: 5px;
+    font-size: 0.8rem;
   }
 }
 
 .dark {
+  input.form-control {
+    &:focus {
+      border-color: #ff6b6b;
+      box-shadow: 0px 0px 0px 5px rgba(255, 107, 107, 0.5) !important;
+    }
+  }
   .error {
-
+    color: #ff6b6b;
   }
 }
