@@ -136,6 +136,7 @@ const Navbar = () => {
               className="search-btn"
               type="submit"
               onClick={navigateToContacts}
+              aria-label="Search to filter products"
             >
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>
@@ -151,6 +152,7 @@ const Navbar = () => {
             onClick={() => {
               nightMode();
             }}
+            aria-label="Dark mode button"
           >
             <div className="btn-circle"></div>
           </button>
@@ -161,6 +163,7 @@ const Navbar = () => {
               setUserInf(true);
               setUserDet("say-hello");
             }}
+            aria-label="User Signup"
           >
             <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
           </button>

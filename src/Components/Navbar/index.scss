@@ -195,11 +195,12 @@ header {
         // DARK MODE BUTTON
         &.night-btn {
           position: relative;
-          width: 40px;
+          width: 42px;
           height: 18px;
-          border: 1px solid #212529;
+          // border: 1px solid #212529;
+          background-color: #ced4da;
           border-radius: 100px;
-          overflow: hidden;
+          // overflow: hidden;
           cursor: pointer;
 
           .btn-circle {
@@ -208,10 +209,11 @@ header {
             transform: translate(0, -50%);
             left: -1px;
 
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             background-color: #212529;
+            box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
 
             transition: all .3s;
           }
