@@ -45,9 +45,9 @@ const Product = ({ product }) => {
         <div className="stars-feed">
           {[...new Array(actStars)].map((arr, index) => {
             return index < product.stars ? (
-              <FontAwesomeIcon icon={faStar} color="#ffa534" />
+              <FontAwesomeIcon icon={faStar} color="#ffa534" key={index}/>
             ) : (
-              <FontAwesomeIcon icon={faStar} className="empty-stars" />
+              <FontAwesomeIcon icon={faStar} className="empty-stars" key={index}/>
             );
           })}
         </div>
