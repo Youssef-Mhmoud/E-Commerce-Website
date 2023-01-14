@@ -96,7 +96,7 @@ $primary-color: #ed4e0f;
   .home-pg .landing .side-bar.side1 .list-side li a {
     color: #fff !important;
 
-    &.sign-btn {
+    &:hover {
       color: #ed4e0f !important;
     }
   }

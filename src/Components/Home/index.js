@@ -103,7 +103,7 @@ const Home = () => {
                   <Link to="/cart">Cart</Link>
                 </li>
                 <li>
-                  <Link to="/cart">Blog</Link>
+                  <Link to="/">Blog</Link>
                 </li>
                 <li>
                   {firstName === "" ? (
