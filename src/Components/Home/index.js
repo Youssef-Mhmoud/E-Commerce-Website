@@ -85,11 +85,9 @@ const Home = () => {
   });
   return (
     <>
-      {scrollToTop && (
-        <div className="scroll" onClick={scroll}>
-          <FontAwesomeIcon icon={faAngleUp} />
-        </div>
-      )}
+      <div className={scrollToTop ? 'scroll' : 'scroll hide-scroll'} onClick={scroll}>
+        <FontAwesomeIcon icon={faAngleUp} />
+      </div>
 
       <div className="container home-pg">
         <div className="landing">
@@ -159,28 +157,28 @@ const Home = () => {
               icon={faAngleRight}
             />
           </div>
-        <div className="line-ads">
-          <div className="box">
-            <FontAwesomeIcon icon={faApple} className="brand" />
-            <h4>Apple</h4>
+          <div className="line-ads">
+            <div className="box">
+              <FontAwesomeIcon icon={faApple} className="brand" />
+              <h4>Apple</h4>
+            </div>
+            <div className="box">
+              <FontAwesomeIcon icon={faMicrosoft} className="brand" />
+              <h4>Microsoft</h4>
+            </div>
+            <div className="box">
+              <FontAwesomeIcon icon={faGoogle} className="brand" />
+              <h4>Google</h4>
+            </div>
+            <div className="box">
+              <FontAwesomeIcon icon={faAws} className="brand" />
+              <h4>Aws</h4>
+            </div>
+            <div className="box">
+              <FontAwesomeIcon icon={faBehance} className="brand" />
+              <h4>Behance</h4>
+            </div>
           </div>
-          <div className="box">
-            <FontAwesomeIcon icon={faMicrosoft} className="brand" />
-            <h4>Microsoft</h4>
-          </div>
-          <div className="box">
-            <FontAwesomeIcon icon={faGoogle} className="brand" />
-            <h4>Google</h4>
-          </div>
-          <div className="box">
-            <FontAwesomeIcon icon={faAws} className="brand" />
-            <h4>Aws</h4>
-          </div>
-          <div className="box">
-            <FontAwesomeIcon icon={faBehance} className="brand" />
-            <h4>Behance</h4>
-          </div>
-        </div>
         </div>
         <div div className="main-watches">
           <Products />

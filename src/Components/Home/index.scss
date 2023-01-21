@@ -3,13 +3,25 @@
   bottom: 25px;
   right: 20px;
   background-color: #ed4e0f;
-  padding: 3px 7px;
+  width: 30px;
+  height: 30px;
   border-radius: 4px;
+  padding: 18px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   z-index: 2000;
   font-size: 20px;
   cursor: pointer;
   color: white;
-  animation: slideInRight .5s forwards;
+
+  transition: all .8s;
+
+  &.hide-scroll {
+    right: -100%;
+  }
 
   &::after {
     content: "";
