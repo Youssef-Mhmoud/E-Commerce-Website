@@ -24,6 +24,8 @@ const Navbar = () => {
     e.preventDefault();
     setTimeout(() => {
       setFilter(dispatch(filterItems(inputRef.current.value)));
+      inputRef.current.value = "";
+      inputRef.current.blur();
       foRef.current.classList.remove("show");
     }, 1000);
   };
