@@ -10,6 +10,8 @@ import React from "react";
 import "./index.scss";
 
 const Footer = () => {
+  let year = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <div className="container flex-footer">
@@ -49,7 +51,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <p className="copy">CopyRights© 2022, ShoPPing</p>
+      <p className="copy">CopyRights© {year}, ShoPPing</p>
     </footer>
   );
 };
